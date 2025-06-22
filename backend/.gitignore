@@ -21,6 +21,6 @@ rad.json
 #Test results file
 TestResults.xml
 #node_modules folder
-*.node_modules/
+node_modules/
 #environment variables file
 *.env
