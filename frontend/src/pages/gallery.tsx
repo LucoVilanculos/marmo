@@ -8,11 +8,43 @@ const imagesByProvince = {
     "https://source.unsplash.com/800x600/?mozambique,beach",
     "https://source.unsplash.com/800x600/?maputo,ocean",
   ],
+  Matola: [
+    "https://source.unsplash.com/800x600/?nampula",
+    "https://source.unsplash.com/800x600/?mozambique,coast",
+  ],
+  Gaza: [
+    "https://source.unsplash.com/800x600/?nampula",
+    "https://source.unsplash.com/800x600/?mozambique,coast",
+  ],
   Inhambane: [
     "https://source.unsplash.com/800x600/?inhambane",
     "https://source.unsplash.com/800x600/?mozambique,sea",
   ],
+  Sofala: [
+    "https://source.unsplash.com/800x600/?nampula",
+    "https://source.unsplash.com/800x600/?mozambique,coast",
+  ],
+  Manica: [
+    "https://source.unsplash.com/800x600/?nampula",
+    "https://source.unsplash.com/800x600/?mozambique,coast",
+  ],
+  Zambézia: [
+    "https://source.unsplash.com/800x600/?nampula",
+    "https://source.unsplash.com/800x600/?mozambique,coast",
+  ],
   Nampula: [
+    "https://source.unsplash.com/800x600/?nampula",
+    "https://source.unsplash.com/800x600/?mozambique,coast",
+  ],
+  Tete: [
+    "https://source.unsplash.com/800x600/?nampula",
+    "https://source.unsplash.com/800x600/?mozambique,coast",
+  ],
+  Niassa: [
+    "https://source.unsplash.com/800x600/?nampula",
+    "https://source.unsplash.com/800x600/?mozambique,coast",
+  ],
+  CaboDelegado: [
     "https://source.unsplash.com/800x600/?nampula",
     "https://source.unsplash.com/800x600/?mozambique,coast",
   ],
@@ -24,11 +56,11 @@ export const Gallery = () => {
   return (
     <section className="min-h-screen py-16 px-4 bg-blue-50 dark:bg-[#0e1a2b]">
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="text-4xl font-bold text-blue-900 dark:text-white mb-4">
+        <h1 className="text-4xl font-bold text-green-600 mb-4">
           Galeria MARMO
         </h1>
         <p className="text-lg text-blue-800 dark:text-blue-200">
-          Explore as maravilhas do Mar Moçambicano por província
+          Actividades por nós feitas
         </p>
       </div>
 
@@ -39,7 +71,7 @@ export const Gallery = () => {
               key={province}
               value={province}
               onClick={() => setSelectedProvince(province)}
-              className="capitalize"
+              className="text-green-600"
             >
               {province}
             </TabsTrigger>

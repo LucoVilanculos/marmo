@@ -40,7 +40,6 @@ export const ContactPage = () => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl p-4"
       >
-        {/* Texto de contato */}
         <section className="flex-1 max-w-md text-blue-900 dark:text-white">
           <h1 className="text-3xl font-bold text-green-600 mb-6">Fale Connosco</h1>
           <article className="text-base mt-6 text-gray-700 dark:text-blue-100">
@@ -48,7 +47,6 @@ export const ContactPage = () => {
           </article>
         </section>
 
-        {/* Formulário */}
         <Card className="w-full max-w-md shadow-xl border border-blue-100 bg-white dark:bg-[#1a263b] dark:text-white">
           <CardContent>
             <form onSubmit={handleSubmit(onSubmit)} className="py-4">

@@ -52,14 +52,12 @@ export function Header() {
   }, [showSearchBar]);
 
   return (
-    <motion.header
+    <header
       className={`w-full border-b z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/90 dark:bg-gray-900/80 shadow-md backdrop-blur-sm"
           : "bg-white dark:bg-gray-900"
       }`}
-      initial={{ opacity: 1 }}
-      animate={{ opacity: scrolled ? 0.95 : 1, scale: scrolled ? 0.98 : 1 }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 md:py-6 md:px-6">
         {/* LOGO À ESQUERDA */}
@@ -242,6 +240,6 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }

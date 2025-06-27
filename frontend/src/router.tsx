@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider, Navigate, useLocation } from "reac
 
 
 
-import { About, Home, Report, AdminPage, ErrorPage, LoginForm, ModeratorPage, EditorPage, Gallery, ContactPage } from "./pages";
+import { About, Home, AdminPage, ErrorPage, LoginForm, Donate, Volunteer, Gallery, ContactPage } from "./pages";
 
 
 import { MainLayout } from "./layout/main-layout";
@@ -36,14 +36,10 @@ const router = createBrowserRouter([
         path: "/login",
         element: <LoginForm />,
       },
-    {
-      path: "/editor",
-      element: (
-        <RequireAuth>
-          <EditorPage />
-        </RequireAuth>
-      ),
-    },
+      {
+        path: "/donate",
+        element: <Donate />,
+      },
     {
       path: "/admin",
       element: (
@@ -53,20 +49,12 @@ const router = createBrowserRouter([
       ),
     },
       {
-        path: "/moderator",
-        element: (
-          <RequireAuth>
-            <ModeratorPage />
-          </RequireAuth>
-        ),
+        path: "/volunteer",
+        element: <Volunteer />,
       },
       {
         path: "/contact",
         element: <ContactPage />,
-      },
-      {
-        path: "/denuncia",
-        element: <Report />,
       },
       {
         path: "/gallery",

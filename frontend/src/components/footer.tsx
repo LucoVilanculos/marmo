@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className="space-y-3">
           <h2 className="text-lg font-semibold text-green-100">MARMO</h2>
           <p className="text-green-100">
-            MARMO, Mar Moçambique.<br />
+            Mar Moçambique.<br />
             Respirando o Oceano & Supirando Biodiversidade!
           </p>
         </div>
@@ -30,7 +30,7 @@ export const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/terms" className="hover:underline text-green-100 hover:text-white">
+              <Link to="/terms" className="hover:underline mt-1 text-green-100 hover:text-white">
                 Termos e condições
               </Link>
               <li>

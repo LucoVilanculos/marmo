@@ -6,6 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Link } from 'react-router-dom';
 
 const fetchFaqs = async () => [
   {
@@ -41,7 +43,7 @@ export const Home = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-800 drop-shadow-md tracking-wider">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
               MARMO
             </h1>
             <p className="text-lg md:text-xl text-indigo-800 tracking-wider font-bold">
@@ -51,7 +53,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* MISSÃO */}
       <section className="bg-green-100 dark:bg-gray-900 py-20 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -62,16 +63,15 @@ export const Home = () => {
         >
           <h2 className="text-3xl font-bold text-green-700 mb-6">Nossa Missão</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-            A <strong className="text-green-600">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Atuamos em educação, conservação,
+            A <strong className="text-green-600">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Actuamos em educação, conservação,
             turismo sustentável, pesquisa científica e apoio às comunidades costeiras.
           </p>
         </motion.div>
       </section>
 
-      {/* AÇÕES */}
       <section className="bg-white dark:bg-gray-700 py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-blue-900 dark:text-blue-100 text-center mb-12">Nossas Áreas de Atuação</h2>
+          <h2 className="text-3xl font-bold text-blue-900 dark:text-green-600 text-center mb-12">Nossas Áreas de Atuação</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
               "Conservação Marinha",
@@ -99,7 +99,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="max-w-6xl mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold text-green-600 text-center mb-10">
           Perguntas Frequentes
@@ -128,7 +127,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* CTA FINAL */}
       <section className="bg-indigo-950 text-white py-16 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -137,15 +135,19 @@ export const Home = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-2xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl md:text-4xl dark:text-green-600 font-bold mb-4">
             Junte-se à MARMO na Proteção do Mar Moçambicano
           </h2>
-          <p className="text-lg mb-6">
+          <p className="text-lg dark:text-green-600 mb-6">
             Sua ajuda pode transformar comunidades costeiras e conservar ecossistemas marinhos únicos.
           </p>
-          <button className="bg-green-600 hover:bg-green-700 transition px-6 py-3 rounded text-white font-semibold">
-            Apoiar a Causa
-          </button>
+          <Link to={"/donate"}>
+            <Button
+            className="bg-green-600 hover:bg-green-700 transition px-6 py-3 rounded text-white font-semibold"
+            >
+              Apoiar a Causa
+            </Button>
+          </Link>
         </motion.div>
       </section>
     </>

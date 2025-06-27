@@ -1,4 +1,7 @@
+import { Link } from "react-router";
 import { motion } from "framer-motion";
+
+import { Button } from "../components/ui/button";
 
 const aboutItems = [
 	{
@@ -63,6 +66,30 @@ export const About = () => {
 					</motion.div>
 				))}
 			</div>
+			<section className="bg-indigo-950 text-white py-16 px-6 text-center">
+				<motion.div
+					initial={{ opacity: 0, scale: 0.95 }}
+					whileInView={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.5 }}
+					viewport={{ once: true }}
+					className="max-w-4xl mx-auto"
+				>
+					<h2 className="text-2xl md:text-4xl font-bold mb-4 text-green-500">
+						Gostaria de ser voluntário?
+					</h2>
+					<p className="text-lg text-blue-100 mb-6">
+						Se você ama o mar, acredita na força da comunidade e quer fazer parte da transformação ambiental em Moçambique, junte-se à nossa rede de voluntários.
+					</p>
+					<Link to={"/volunteer"}>
+						<Button
+							className="bg-green-600 hover:bg-green-700 transition px-6 py-3 rounded text-white font-semibold"
+						>
+							Candidatar-se como Voluntário
+						</Button>
+					</Link>
+				</motion.div>
+			</section>
+
 		</section>
 	);
 };
