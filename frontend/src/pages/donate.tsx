@@ -29,15 +29,21 @@ export const Donate = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-[#0e1a2b]">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900">
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl p-4"
       >
+        <Button
+          value={"ghost"}
+          className="absolute top-20 left-1.5 bg-transparent hover:bg-green-100 text-indigo-600 text-sm"
+        >
+          <a href="/">Voltar</a>
+        </Button>
         <section className="flex-1 max-w-md text-blue-900 dark:text-white">
-          <h1 className="text-3xl font-bold text-green-600 mb-6">Apoie a MARMO</h1>
+          <h1 className="text-3xl font-bold text-indigo-900 dark:text-green-600 mb-6">Apoie a MARMO</h1>
           <article className="text-base mt-6 text-gray-700 dark:text-blue-100">
             A sua doação fortalece nossa missão de proteger os ecossistemas marinhos de Moçambique. Utilize um dos métodos abaixo para contribuir de forma rápida e segura.
           </article>

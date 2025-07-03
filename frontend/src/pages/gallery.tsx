@@ -5,48 +5,87 @@ import { motion } from "framer-motion";
 
 const imagesByProvince = {
   Maputo: [
-    "https://source.unsplash.com/800x600/?mozambique,beach",
-    "https://source.unsplash.com/800x600/?maputo,ocean",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
+    "../public/img/live.jpg",
+    "../public/img/marmo-acoes.jpg",
+    "../public/img/living-ocean.jpg",
+    "../public/img/mangal-marmo.jpg",
+    "../public/img/mar.jpg",
   ],
   Matola: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
+    "../public/img/live.jpg",
+    "../public/img/marmo-acoes.jpg",
+    "../public/img/living-ocean.jpg",
+    "../public/img/mangal-marmo.jpg",
+    "../public/img/mar.jpg",
   ],
   Gaza: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
+    "../public/img/live.jpg",
+    "../public/img/marmo-acoes.jpg",
+    "../public/img/living-ocean.jpg",
+    "../public/img/mangal-marmo.jpg",
+    "../public/img/mar.jpg",
   ],
   Inhambane: [
-    "https://source.unsplash.com/800x600/?inhambane",
-    "https://source.unsplash.com/800x600/?mozambique,sea",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
+    "../public/img/live.jpg",
+    "../public/img/marmo-acoes.jpg",
   ],
   Sofala: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
   ],
   Manica: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
   ],
   Zambézia: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
   ],
   Nampula: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
   ],
   Tete: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
   ],
   Niassa: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
   ],
   CaboDelegado: [
-    "https://source.unsplash.com/800x600/?nampula",
-    "https://source.unsplash.com/800x600/?mozambique,coast",
+    "../public/img/ocean.jpg",
+    "../public/img/marmo-pic.jpg",
+    "../public/img/saving-ocean.jpg",
+    "../public/img/splash-marmo.jpg",
   ],
 };
 
@@ -54,12 +93,12 @@ export const Gallery = () => {
   const [selectedProvince, setSelectedProvince] = useState("Maputo");
 
   return (
-    <section className="min-h-screen py-16 px-4 bg-blue-50 dark:bg-[#0e1a2b]">
+    <section className="min-h-screen py-16 px-4 bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="text-4xl font-bold text-green-600 mb-4">
+        <h1 className="text-4xl font-bold text-indigo-900 dark:text-green-600 mb-4">
           Galeria MARMO
         </h1>
-        <p className="text-lg text-blue-800 dark:text-blue-200">
+        <p className="text-lg font-semibold text-indigo-900 dark:text-green-600">
           Actividades por nós feitas
         </p>
       </div>
@@ -71,7 +110,7 @@ export const Gallery = () => {
               key={province}
               value={province}
               onClick={() => setSelectedProvince(province)}
-              className="text-green-600"
+              className="text-green-600 dark:text-indigo-900"
             >
               {province}
             </TabsTrigger>

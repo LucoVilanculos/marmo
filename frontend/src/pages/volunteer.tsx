@@ -19,7 +19,7 @@ const schema = z.object({
   telefone: z
     .string()
     .regex(/^(8[234567])\d{7}$/, "Número deve começar com 82/83/84/85/86/87 e ter 9 dígitos"),
-  sexo: z.enum(["masculino", "feminino", "outros", "prefiro-nao-dizer"], {
+  sexo: z.enum(["masculino", "feminino", "outros", "prefiro não dizer"], {
     required_error: "Selecione o sexo",
   }),
 });
@@ -41,17 +41,22 @@ export const Volunteer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0e1a2b] px-6 py-12 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 px-6 py-12 flex items-center justify-center">
+      <Button
+        value={"ghost"}
+        className="absolute top-20 bg-transparent left-1.5 hover:bg-green-100 text-indigo-600 text-sm"
+      >
+        <a href="/">Voltar</a>
+      </Button>
       <div className="flex flex-col md:flex-row items-center gap-10 w-full max-w-6xl">
-        {/* LOGO + TEXTO */}
-        <div className="flex-1 text-center md:text-left">
-          <img src="/marmo-logo.png" alt="Logo MARMO" className="h-24 mx-auto md:mx-0 mb-4" />
-          <p className="text-lg text-gray-800 dark:text-gray-200">
-            A <span className="font-bold text-green-600">MARMO</span> convida você a fazer parte da transformação. Seja voluntário e ajude a proteger o mar moçambicano e suas comunidades costeiras.
+        <div className="flex-1 text-center mt-5 md:text-left">
+          <h1 className="text-4xl mb-3 font-bold text-indigo-900 dark:text-green-600">Torne-se um voluntário</h1>
+      
+          <p className="text-lg  text-gray-00 dark:text-gray-200">
+            A <span className="font-bold text-green-600 dark:text-green-600">MARMO</span> convida você a fazer parte da transformação. Seja voluntário e ajude a proteger o mar moçambicano e suas comunidades costeiras.
           </p>
         </div>
 
-        {/* FORMULÁRIO */}
         <Card className="w-full max-w-md shadow-xl border border-blue-100 bg-white dark:bg-[#1a263b] dark:text-white">
           <CardHeader>
             <CardTitle className="text-green-600 text-center text-xl">Candidatura a Voluntário</CardTitle>
