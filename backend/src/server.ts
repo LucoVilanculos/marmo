@@ -1,7 +1,7 @@
 import cors from "cors";
 
 import express from "express";
-import dotenv from "dotenv";
+import "dotenv/config";
 import mongoose from "mongoose";
 
 import { AuthRouter } from "./routes/auth.route";
@@ -12,13 +12,9 @@ import { DonationRouter } from "./routes/donation.route";
 import { PublicationRouter } from "./routes/publication.route";
 import { VolunteerRouter } from "./routes/volunteer.route";
 
-
-
-
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5002" }));
-dotenv.config();
+app.use(cors({ origin: "http://localhost:3001" }));
 
 const host = process.env.HOST || "http://localhost";
 const port = process.env.PORT || 3002;
@@ -30,8 +26,6 @@ app.use("/form", FormRouter);
 app.use("/donation", DonationRouter);
 app.use("/publication", PublicationRouter);
 app.use("/volunteer", VolunteerRouter);
-
-
 
 mongoose
   .connect(process.env.BD_URI as string)
