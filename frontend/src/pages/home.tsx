@@ -33,7 +33,7 @@ export const Home = () => {
 
   return (
     <>
-      {/* HERO */}
+      
       <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1468581264429-2548ef9eb732?w=1000&auto=format&fit=crop&q=60"

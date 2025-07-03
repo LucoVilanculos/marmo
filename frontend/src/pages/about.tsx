@@ -49,7 +49,7 @@ export const About = () => {
 				actuar também em outros setores, com foco em:
 			</p>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 max-w-4xl w-full">
 				{aboutItems.map((item, idx) => (
 					<motion.div
 						key={item.title}

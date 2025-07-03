@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react"
 import { motion } from "framer-motion"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -8,7 +8,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "./../ui/button"
 import {
   Card,
-  CardAction,
   CardContent,
   CardHeader,
   CardTitle,
@@ -150,17 +149,6 @@ export const LoginForm = () => {
                   </div>
                 </form>
               </Form>
-              <CardAction className="w-full text-center pt-1">
-                <p className="text-sm">
-                  Não tem uma conta?
-                  <Link
-                    to="/register"
-                    className="text-blue-900 dark:text-blue-100 hover:underline pl-1 "
-                  >
-                    Clique aqui para registrar
-                  </Link>
-                </p>
-              </CardAction>
             </CardContent>
           </Card>
         </motion.div>
