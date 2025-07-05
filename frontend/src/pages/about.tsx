@@ -29,17 +29,13 @@ const aboutItems = [
 export const About = () => {
 	return (
 		<section className="flex flex-col items-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
-			<h1 className="text-4xl text-indigo-900 font-bold mt-6 mb-6 text-center">
-				Sobre Nós
-			</h1>
+			<section className="text-center py-10 px-6">
+            	<h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
+					Sobre a MARMO
+            	</h1>
+      		</section>
 
-			<div className="mb-2 flex justify-center p-4">
-				<img
-					src="../public/img/marmo-logo.png"
-					alt="Logo da MARMO"
-					className="rounded shadow h-70 w-200 md:h-80 md:w-300 lg:h-96 lg:w-400 xl:h-120 xl:w-500"
-				/>
-			</div>
+			
 
 			<p className="max-w-2xl text-base md:text-lg text-center mb-10 p-4 text-black dark:text-gray-300">
 				A{" "}
@@ -49,7 +45,7 @@ export const About = () => {
 				actuar também em outros setores, com foco em:
 			</p>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 p-4 max-w-4xl w-full">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8 mb-8 p-6 w-full transition-transform hover:scale-105">
 				{aboutItems.map((item, idx) => (
 					<motion.div
 						key={item.title}
@@ -66,6 +62,7 @@ export const About = () => {
 					</motion.div>
 				))}
 			</div>
+
 			<section className="bg-indigo-950 text-white w-full py-13 px-6 text-center">
 				<motion.div
 					initial={{ opacity: 0, scale: 0.95 }}

@@ -41,15 +41,15 @@ export const Home = () => {
     <>
       <section className="bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
             <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
-              <span className="">MAR</span>MO
+              MARMO
             </h1>
             <p className="text-lg md:text-xl text-indigo-800 tracking-wider font-bold">
-              <span className="">Mar Moç</span>ambique
+              Mar Moçambique
             </p>
       </section>
 
       <section
-        className="overflow-hidden max-w-[100%] mx-auto h-[500px] relative"
+        className="overflow-hidden max-w-[100%] mx-auto h-[600px] relative mt-1.5 mb-1.5"
         ref={emblaRef}
       >
         <div className="flex transition-transform duration-1000 ease-in-out">
@@ -71,7 +71,7 @@ export const Home = () => {
               <img
                 src={img}
                 alt={`Banner ${index + 1}`}
-                className="h-[500px] object-cover shadow-md w-full"
+                className="h-[600px] object-cover shadow-md w-full"
               />
             </div>
           ))}
@@ -100,7 +100,7 @@ export const Home = () => {
             turismo sustentável, pesquisa científica e apoio às comunidades costeiras.
           </p>
           <Link to={"/volunteer"}>
-            <Button variant="ghost" className="mt-4 bg-green-600 hover:bg-green-500 transition px-6 py-3 rounded text-white font-semibold ">
+            <Button variant="ghost" className="mt-4 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold transition-transform hover:scale-105">
                 Quer ser voluntário?
             </Button>
           </Link>
@@ -110,7 +110,7 @@ export const Home = () => {
       <section className="bg-white dark:bg-gray-700 py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-900 dark:text-green-600 text-center mb-12">Nossas Áreas de Atuação</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
             {[
               "Conservação Marinha",
               "Educação Ambiental",
@@ -125,7 +125,7 @@ export const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm"
+                className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
               >
                 <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -141,7 +141,7 @@ export const Home = () => {
         <h2 className="text-3xl font-bold text-green-600 text-center mb-10">
           Perguntas Frequentes
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8 ">
           {faqs.map((faq, idx) => (
             <motion.div
               key={idx}
@@ -150,7 +150,7 @@ export const Home = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg shadow-sm">
+              <Card className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg shadow-sm transition-transform hover:scale-105">
                 <CardHeader>
                   <CardTitle className="text-blue-900 dark:text-blue-300 text-lg">
                     {faq.question}

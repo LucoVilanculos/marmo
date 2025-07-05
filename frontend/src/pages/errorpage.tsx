@@ -7,10 +7,10 @@ export const ErrorPage = () => {
       bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900"
     >
       <div className="text-center flex flex-col items-center gap-4 p-6">
-        <h1 className="text-[5rem] sm:text-2xl font-extrabold text-indigo-500 animate-pulse leading-none">
+        <h1 className="text-[10rem] mb-2 font-extrabold text-indigo-500 animate-pulse leading-none">
           Página não encontrada
         </h1>
-        <p className="text-xl font-bold text-green-600 dark:text-green-500 ">
+        <p className="text-xl md:text-3xl, lg:text-5xl font-bold text-green-600 dark:text-green-500 ">
           Parece que você se perdeu
         </p>
         <Link to="/">

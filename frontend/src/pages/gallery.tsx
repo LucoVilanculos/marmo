@@ -93,24 +93,24 @@ export const Gallery = () => {
   const [selectedProvince, setSelectedProvince] = useState("Maputo");
 
   return (
-    <section className="min-h-screen py-16 px-4 bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900">
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <h1 className="text-4xl font-bold text-indigo-900 dark:text-green-600 mb-4">
-          Galeria MARMO
+    <section className="flex flex-col items-center p-4 bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
+      <section className="text-center py-7 px-6">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
+          Galeria
         </h1>
-        <p className="text-lg font-semibold text-indigo-900 dark:text-green-600">
-          Actividades por nós feitas
+        <p className="text-lg md:text-xl text-indigo-800 dark:text-green-600 tracking-wider font-bold">
+          Actividades feitas por nós
         </p>
-      </div>
+      </section>
 
       <Tabs defaultValue={selectedProvince} className="max-w-6xl mx-auto">
-        <TabsList className="flex flex-wrap justify-center gap-2 mb-8">
+        <TabsList className="flex flex-wrap justify-center gap-2 mb-10">
           {Object.keys(imagesByProvince).map((province) => (
             <TabsTrigger
               key={province}
               value={province}
               onClick={() => setSelectedProvince(province)}
-              className="text-green-600 dark:text-indigo-900"
+              className="text-green-600"
             >
               {province}
             </TabsTrigger>
@@ -118,7 +118,7 @@ export const Gallery = () => {
         </TabsList>
 
         {Object.entries(imagesByProvince).map(([province, images]) => (
-          <TabsContent key={province} value={province} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <TabsContent key={province} value={province} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-10 mt-10 gap-6">
             {images.map((url, idx) => (
               <motion.div
                 key={idx}

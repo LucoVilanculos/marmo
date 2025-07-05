@@ -41,23 +41,29 @@ export const Volunteer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 px-6 py-12 flex items-center justify-center">
+    <div className="flex flex-col p-4 items-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
       <Button
         value={"ghost"}
         className="absolute top-20 bg-transparent left-1.5 hover:bg-green-100 text-indigo-600 text-sm"
       >
         <a href="/">Voltar</a>
       </Button>
+
+      <section className="text-center py-7 px-6">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
+          Quer ser Voluntário?
+        </h1>
+      </section>
+
       <div className="flex flex-col md:flex-row items-center gap-10 w-full max-w-6xl">
         <div className="flex-1 text-center mt-5 md:text-left">
-          <h1 className="text-4xl mb-3 font-bold text-indigo-900 dark:text-green-600">Torne-se um voluntário</h1>
       
           <p className="text-lg  text-gray-00 dark:text-gray-200">
             A <span className="font-bold text-green-600 dark:text-green-600">MARMO</span> convida você a fazer parte da transformação. Seja voluntário e ajude a proteger o mar moçambicano e suas comunidades costeiras.
           </p>
         </div>
 
-        <Card className="w-full max-w-md shadow-xl border border-blue-100 bg-white dark:bg-[#1a263b] dark:text-white">
+        <Card className="w-full max-w-md shadow-xl border border-blue-100 bg-white dark:bg-[#1a263b] dark:text-white transition-transform hover:scale-105 mb-5">
           <CardHeader>
             <CardTitle className="text-green-600 text-center text-xl">Candidatura a Voluntário</CardTitle>
           </CardHeader>

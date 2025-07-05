@@ -35,7 +35,13 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900">
+    <div className="flex flex-col items-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
+      <section className="text-center py-7 px-6">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
+          Fale Conosco
+        </h1>
+      </section>
+      
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -43,21 +49,24 @@ export const ContactPage = () => {
         className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl p-4"
       >
         <section className="flex-1 max-w-md text-indigo-900 dark:text-white">
-          <h1 className="text-3xl font-bold dark:text-green-600 mb-6">Fale Connosco</h1>
-          <article className="text-base mt-4 text-gray-700 dark:text-blue-100">
+
+          <article className="text-base mt-4 text-gray-700 mb-5 dark:text-blue-100">
             A <span className="font-semibold text-green-600 dark:text-indigo-900">MARMO</span> está sempre aberta ao diálogo. Se você tiver dúvidas, sugestões ou quiser apoiar nossa missão, envie-nos uma mensagem através do formulário. Nossa equipa responderá o mais breve possível.
           </article>
-        </section>
-        <section className="bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 backdrop-blur-md rounded-2xl p-6 w-full max-w-xl shadow-2xl space-y-6 animate-fade-in">
-          <div className="text-left space-y-3">
-            <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><Mail size={24}/> Email:</span> <a href="mailto:marmo@gmail.com" className="underline">marmo@gmail.com</a></p>
-            <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><PhoneCall size={24}/> Contacto:</span> +258 86 000 0000</p>
-            <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><PhoneCallIcon size={24}/> Opcional:</span> +258 83 114 0000</p>
-            <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><LocateIcon size={24}/> Endereço:</span> Av. Mao Tse Tung</p>
-          </div>
-        </section>
 
-        <Card className="w-full max-w-md shadow-xl border border-blue-100 bg-white dark:bg-[#1a263b] dark:text-white">
+          <section className="bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 backdrop-blur-md transition-transform hover:scale-105 rounded-2xl p-6 w-full max-w-xl shadow-2xl space-y-6 animate-fade-in">
+            <div className="text-left space-y-3">
+              <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><Mail size={24}/> Email:</span> <a href="mailto:marmo@gmail.com" className="underline">marmo@gmail.com</a></p>
+              <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><PhoneCall size={24}/> Contacto:</span> +258 86 000 0000</p>
+              <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><PhoneCallIcon size={24}/> Opcional:</span> +258 83 114 0000</p>
+              <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><LocateIcon size={24}/> Endereço:</span> Av. Mao Tse Tung</p>
+            </div>
+          </section>
+          
+        </section>
+        
+
+        <Card className="w-full max-w-md shadow-xl border border-blue-100 bg-white dark:bg-[#1a263b] dark:text-white transition-transform hover:scale-105">
           <CardContent>
             <form onSubmit={handleSubmit(onSubmit)} className="py-4">
               <div className="flex flex-col gap-5">

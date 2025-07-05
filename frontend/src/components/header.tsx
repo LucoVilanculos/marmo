@@ -22,7 +22,9 @@ export function Header() {
     { label: "Início", href: "/" },
     { label: "Sobre", href: "/about" },
     {label: "Galeria", href: "/gallery" },
-    {label: "Contacto", href: "/contact"}
+    {label: "Contacto", href: "/contact"},
+    {label: "Donativo", href: "/donate"},
+    { label: "Voluntariado", href: "/volunteer" },
   ];
 
   const session = localStorage.getItem("session");
