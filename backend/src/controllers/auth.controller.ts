@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import { User } from "../models/user.model";
 import { UserProps } from "../types/userprops";
+import { sendEmail } from "../utils/utils"; 
 
 export const login = async (req: Request, res: Response): Promise<any> => {
   const body = req.body as Partial<UserProps>; 
@@ -76,3 +77,4 @@ export const updateUser = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Error updating user", error });
   }
 };
+

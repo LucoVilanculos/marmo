@@ -2,41 +2,46 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import { User } from "../models/user.model";
 import { UserProps } from "../types/userprops";
+import {sendEmail} from "../utils/utils"; 
 
-export const register = async (req: Request, res: Response) => {
-  try {
-    const {
-      name,
-      email,
-      password,
-      role,
-    } = req.body as UserProps;
+export const register = async (req: Request, res: Response): Promise<any> => {
+  const body = req.body as Partial<UserProps>; 
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      res.status(400).json({ message: "There is already a user registered with this email." });
-    } else if (!name || !email || !password || !role) {
-      res.status(400).json({ message: "Missing required fields." });
-    } else {
-      const hashedPassword = await bcrypt.hash(password, 10);
+  const { name, email, password } = body;
 
-      const userData: UserProps = {
-        name,
-        email,
-        password: hashedPassword,
-      } as UserProps;
-
-      const user = await User.create(userData);
-
-
-      console.log("req.body:", req.body);
-
-      res.status(201).json({ message: "Admin created successfully", user });
-    }
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "An internal server error has occurred", error });
+  if (!name || !email || !password) {
+    return res.status(400).json({ message: "Name, email, and password are required" });
   }
+
+  const existingUser = await User.findOne({ email }) as UserProps & { _id: any };
+
+  if (existingUser) {
+    return res.status(409).json({ message: "User already exists" });
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  const user = new User({
+    name,
+    email,
+    password: hashedPassword,
+    role: "user",
+  });
+
+  await user.save();
+
+  await sendEmail({
+    to: process.env.CONTACT_EMAIL || "",
+    subject: "Novo registro de usuário",
+    html: `
+      <h2>Novo usuário registrado</h2>
+      <p>Nome: ${name}</p>
+      <p>Email: ${email}</p>
+      <p>Data: ${new Date().toLocaleString()}</p>
+    `,
+  });
+
+  return res.status(201).json({ message: "User registered successfully" });
 };
 
 
