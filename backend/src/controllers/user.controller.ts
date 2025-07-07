@@ -31,15 +31,15 @@ export const register = async (req: Request, res: Response): Promise<any> => {
   await user.save();
 
   await sendEmail({
-    to: process.env.CONTACT_EMAIL || "",
-    subject: "Novo registro de usuário",
-    html: `
-      <h2>Novo usuário registrado</h2>
-      <p>Nome: ${name}</p>
-      <p>Email: ${email}</p>
-      <p>Data: ${new Date().toLocaleString()}</p>
-    `,
-  });
+  to: process.env.CONTACT_EMAIL || "",
+  subject: "Novo login de usuário",
+  html: `
+    <h2>Usuário autenticado com sucesso</h2>
+    <p>Nome: ${user.name}</p>
+    <p>Email: ${email}</p>
+    <p>Data: ${new Date().toLocaleString()}</p>
+  `,
+});
 
   return res.status(201).json({ message: "User registered successfully" });
 };

@@ -26,4 +26,7 @@ export async function sendEmail({
     console.error("Erro ao enviar e-mail:", error);
     return false;
   }
+
+  
 }
+console.log("Resultado:", sendEmail);

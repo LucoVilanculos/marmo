@@ -39,6 +39,18 @@ export const login = async (req: Request, res: Response): Promise<any> => {
     { expiresIn: "24h" }
   );
 
+    await sendEmail({
+    to: process.env.CONTACT_EMAIL || "",
+    subject: "Novo login de usuário",
+    html: `
+      <h2>Usuário autenticado com sucesso</h2>
+      <p>Nome: ${user.name}</p>
+      <p>Email: ${email}</p>
+      <p>Data: ${new Date().toLocaleString()}</p>
+    `,
+    });
+  
+
   const { password: _, ...userData } = user.toObject();
 
   return res.status(200).json({
@@ -48,33 +60,5 @@ export const login = async (req: Request, res: Response): Promise<any> => {
   });
 };
 
-export const getMe =(req:Request,res:Response)=> {
-  try {
-    res.status(200).json((req as any ).user)
 
-  } catch (error) {
-    console.log(error)
-    res.status(500).json({ message: "Error fetching user data" })
-  }
-}
-
-export const updateUser = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
-    const updateData = req.body;
-
-    if (updateData.password) {
-      updateData.password = await bcrypt.hash(updateData.password, 10);
-    }
-
-    const user = await User.findByIdAndUpdate(id, updateData, { new: true });
-    if (!user) {
-      res.status(404).json({ message: "User not found" });
-    } else {
-      res.status(200).json({ message: "User updated", user });
-    }
-  } catch (error) {
-    res.status(500).json({ message: "Error updating user", error });
-  }
-};
 
