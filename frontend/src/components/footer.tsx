@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Facebook } from "lucide-react";
 import { Instagram } from "lucide-react";
 import { Linkedin } from "lucide-react";
+import { Twitter } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -76,12 +77,22 @@ export const Footer = () => {
             </li>
             <li>
               <a
-                href="https://x.com"
-                className="hover:text-blue-300 transition"
+                href="https://linkedin.com"
+                className="hover:text-blue-600 transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Linkedin className="inline mr-1" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://x.com"
+                className="hover:text-indigo-900 transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="inline mr-1" />
               </a>
             </li>
           </ul>

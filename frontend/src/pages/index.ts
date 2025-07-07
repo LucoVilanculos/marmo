@@ -1,6 +1,6 @@
 import { Home } from "./home";
 import { About } from "./about";
-import { LoginForm } from "../components/auth/login";
+import { LoginPage } from "./login";
 import { ContactPage } from "./contact";
 import { Gallery } from "./gallery";
 import { Donate } from "./donate";
@@ -11,7 +11,7 @@ import { ErrorPage } from "./errorpage";
 export {
   Home,
     About,
-    LoginForm,
+    LoginPage,
     ContactPage,
     Gallery,
     Donate,

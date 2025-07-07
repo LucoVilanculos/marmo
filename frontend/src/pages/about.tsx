@@ -28,20 +28,16 @@ const aboutItems = [
 
 export const About = () => {
 	return (
-		<section className="flex flex-col items-center px-4 py-8 font-sans">
-			<h1 className="text-4xl text-green-600 font-bold mb-6 text-center">
-				Sobre Nós
-			</h1>
+		<section className="flex flex-col items-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
+			<section className="text-center py-10 px-6">
+            	<h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
+					Sobre a MARMO
+            	</h1>
+      		</section>
 
-			<div className="mb-2 flex justify-center">
-				<img
-					src="/marmo-logo.png"
-					alt="Logo da MARMO"
-					className="rounded shadow-lgs max-w-xs h-28 object-contain"
-				/>
-			</div>
+			
 
-			<p className="max-w-2xl text-base md:text-lg text-center mb-10 text-black dark:text-gray-300">
+			<p className="max-w-2xl text-base md:text-lg text-center mb-10 p-4 text-black dark:text-gray-300">
 				A{" "}
 				<strong className="font-bold text-green-600">MARMO</strong> foi criada
 				para promover a manutenção da diversidade biológica do mar moçambicano
@@ -49,7 +45,7 @@ export const About = () => {
 				actuar também em outros setores, com foco em:
 			</p>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8 mb-8 p-6 w-full transition-transform hover:scale-105">
 				{aboutItems.map((item, idx) => (
 					<motion.div
 						key={item.title}
@@ -66,7 +62,8 @@ export const About = () => {
 					</motion.div>
 				))}
 			</div>
-			<section className="bg-indigo-950 text-white py-16 px-6 text-center">
+
+			<section className="bg-indigo-950 text-white w-full py-13 px-6 text-center">
 				<motion.div
 					initial={{ opacity: 0, scale: 0.95 }}
 					whileInView={{ opacity: 1, scale: 1 }}

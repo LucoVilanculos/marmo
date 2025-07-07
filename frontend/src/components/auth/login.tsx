@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react"
 import { motion } from "framer-motion"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -8,7 +8,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "./../ui/button"
 import {
   Card,
-  CardAction,
   CardContent,
   CardHeader,
   CardTitle,
@@ -56,13 +55,9 @@ export const LoginForm = () => {
 
       if (role === "admin") {
         navigate("/admin");
-      } else if (role === "driver") {
-        navigate("/driver-avenidas");
-      } else {
-        navigate("/user");
-      }
+      } 
     } catch (error) {
-      toast.error("Incorrect Email or Password. Please check your credentials.", { id: "1" });
+      toast.error("Email ou Password incorretos. Por favor, verifique suas credenciais.", { id: "1" });
     }
   }
   return (
@@ -70,15 +65,15 @@ export const LoginForm = () => {
       <div className="flex flex-col md:flex-row-reverse w-full max-w-4xl bg-white/90 dark:bg-[#232c47] rounded-xl shadow-2xl overflow-hidden dark:text-white">
         <div className="flex flex-col justify-between items-center bg-gradient-to-br from-blue-900 via-blue-700 to-blue-400 dark:from-[#181f3a] dark:via-[#22305a] dark:to-[#2b4170] md:w-1/2 w-full p-8 relative">
           <div className="w-full">
-            <h1 className="text-4xl font-bold text-white text-center drop-shadow mb-2">BYTES-GO</h1>
+            <h1 className="text-4xl font-bold text-center text-green-600 drop-shadow mb-2">MARMO</h1>
             <p className="text-blue-100 text-center text-lg font-light mb-8">
-              Bem-vindo de volta! Faça login para acessar sua conta e aproveitar a melhor experiência de mobilidade urbana.
+              Bem-vindo de volta! Admin Faça login para acessar sua conta.
             </p>
           </div>
           <img
-            src=""
+            src="../public/img/marmo-logo.png"
             alt="Marmo Logo"
-            className="w-full max-w-xs mx-auto drop-shadow-xl"
+            className="w-full mx-auto drop-shadow-xl"
             draggable={false}
           />
         </div>
@@ -145,22 +140,11 @@ export const LoginForm = () => {
                   <div className="flex-col gap-2 text-center">
                     <Toaster />
                     <Button type="submit" className="w-full bg-blue-900 dark:bg-blue-700 text-white">
-                      Sign In
+                      Login
                     </Button>
                   </div>
                 </form>
               </Form>
-              <CardAction className="w-full text-center pt-1">
-                <p className="text-sm">
-                  Não tem uma conta?
-                  <Link
-                    to="/register"
-                    className="text-blue-900 dark:text-blue-100 hover:underline pl-1 "
-                  >
-                    Clique aqui para registrar
-                  </Link>
-                </p>
-              </CardAction>
             </CardContent>
           </Card>
         </motion.div>
