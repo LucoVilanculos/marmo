@@ -41,24 +41,24 @@ export const Volunteer = () => {
   };
 
   return (
-    <div className="flex flex-col p-4 items-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
+    <div className="flex flex-col p-4 items-center bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
       <Button
         value={"ghost"}
-        className="absolute top-20 bg-transparent left-1.5 hover:bg-green-100 text-indigo-600 text-sm"
+        className="absolute top-20 bg-transparent left-1.5 hover:bg-green-100 text-blue-600 text-sm"
       >
         <a href="/">Voltar</a>
       </Button>
 
       <section className="text-center py-7 px-6">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
-          Quer ser Voluntário?
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+          QUER SER VOLUNTÁRIO?
         </h1>
       </section>
 
-      <div className="flex flex-col md:flex-row items-center gap-10 w-full max-w-6xl">
+      <div className="flex flex-col items-center gap-10 w-full max-w-6xl">
         <div className="flex-1 text-center mt-5 md:text-left">
       
-          <p className="text-lg  text-gray-00 dark:text-gray-200">
+          <p className="max-w-xl text-lg text-gray-00 dark:text-gray-200">
             A <span className="font-bold text-green-600 dark:text-green-600">MARMO</span> convida você a fazer parte da transformação. Seja voluntário e ajude a proteger o mar moçambicano e suas comunidades costeiras.
           </p>
         </div>
@@ -87,7 +87,7 @@ export const Volunteer = () => {
               <div>
                 <Label htmlFor="telefone">Número de Telefone</Label>
                 <div className="flex gap-2">
-                  <span className="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-sm rounded-l-md text-gray-700 dark:text-white">+258</span>
+                  <span className="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-sm rounded-l-md text-gray-600 dark:text-white">+258</span>
                   <Input
                     id="telefone"
                     {...register("telefone")}
@@ -114,7 +114,7 @@ export const Volunteer = () => {
               </div>
               <Button
                 type="submit"
-                className="mt-4 bg-green-600 hover:bg-green-700 text-white font-semibold"
+                className="mt-4 bg-green-600 hover:bg-green-600 text-white font-semibold"
               >
                 Submeter
               </Button>

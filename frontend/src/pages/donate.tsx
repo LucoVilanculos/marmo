@@ -77,17 +77,17 @@ export const Donate = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col p-4 items-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
+    <div className="min-h-screen flex flex-col p-4 items-center bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
       <Button
         value={"ghost"}
-        className="absolute top-20 left-1.5 bg-transparent hover:bg-green-100 text-indigo-600 text-sm"
+        className="absolute top-20 left-1.5 bg-transparent hover:bg-green-100 text-blue-600 text-sm"
       >
         <a href="/">Voltar</a>
       </Button>
 
       <section className="text-center py-7 px-6">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
-          Quer apoiar a MARMO?
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+          QUER APOIAR A MARMO?
         </h1>
       </section>
 
@@ -95,15 +95,15 @@ export const Donate = () => {
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl p-4 flex-1"
+        className="flex flex-col items-center p-4 "
       >
-        <section className="flex-1 max-w-md text-blue-900 dark:text-white">
-          <article className="text-base text-gray-700 dark:text-blue-100">
+        <section className="max-w-xl mb-4 text-blue-900 dark:text-white">
+          <article className="text-base text-gray-600 dark:text-blue-100">
             A sua doação fortalece nossa missão de proteger os ecossistemas marinhos de Moçambique. Utilize um dos métodos abaixo para contribuir de forma rápida e segura.
           </article>
         </section>
 
-        <div className="w-full max-w-md bg-white dark:bg-[#1a263b] shadow-xl rounded-lg p-6 border border-blue-100 dark:border-blue-800">
+        <div className="w-full max-w-md shadow-xl border border-blue-100 bg-white dark:bg-[#1a263b] dark:text-white transition-transform hover:scale-105 mb-5 p-6 rounded-lg">
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
             <div className="grid gap-2">
               <Label htmlFor="nome">
@@ -113,7 +113,7 @@ export const Donate = () => {
                 id="nome"
                 {...register("nome")}
                 placeholder="Seu nome"
-                className="rounded-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
+                className="rounded-md border border-blue-600 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
               />
               {errors.nome && (
                 <span className="text-red-500 text-sm">{errors.nome.message}</span>
@@ -127,7 +127,7 @@ export const Donate = () => {
               <select
                 id="metodo"
                 {...register("metodo")}
-                className="rounded-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400 py-2 px-3"
+                className="rounded-md border border-blue-600 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400 py-2 px-3"
               >
                 <option value="">Selecione um método</option>
                 <option value="mpesa">M-Pesa</option>
@@ -149,7 +149,7 @@ export const Donate = () => {
                   <span className="font-bold">Número de Telefone</span>
                 </Label>
                 <div className="flex items-center">
-                  <span className="px-2 py-2 rounded-l-md border border-blue-700 bg-gray-100 dark:bg-[#28335a] dark:text-white border-r-0 select-none">
+                  <span className="px-2 py-2 rounded-l-md border border-blue-600 bg-gray-100 dark:bg-[#28335a] dark:text-white border-r-0 select-none">
                     +258
                   </span>
                   <Input
@@ -159,7 +159,7 @@ export const Donate = () => {
                     minLength={9}
                     pattern="\d{9}"
                     placeholder="Ex: 841234567"
-                    className="rounded-l-none rounded-r-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
+                    className="rounded-l-none rounded-r-md border border-blue-600 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
                     inputMode="numeric"
                     autoComplete="off"
                   />
@@ -167,7 +167,7 @@ export const Donate = () => {
                 {errors.numero && (
                   <span className="text-red-500 text-sm">{errors.numero.message}</span>
                 )}
-                <div className="mt-1 text-xs text-blue-700 dark:text-blue-200">
+                <div className="mt-1 text-xs text-blue-600 dark:text-blue-200">
                   Digite apenas os 9 dígitos do número (ex: 841234567)
                 </div>
               </div>
@@ -190,12 +190,12 @@ export const Donate = () => {
                       ? "13 dígitos"
                       : "10 dígitos"
                   }
-                  className="rounded-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
+                  className="rounded-md border border-blue-600 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
                 />
                 {errors.conta && (
                   <span className="text-red-500 text-sm">{errors.conta.message}</span>
                 )}
-                <div className="mt-1 text-xs text-blue-700 dark:text-blue-200">
+                <div className="mt-1 text-xs text-blue-600 dark:text-blue-200">
                   {metodo === "bci" && "Insira 13 dígitos"}
                   {metodo === "mileniumbim" && "Insira 11 dígitos"}
                   {metodo === "standardbank" && "Insira 13 dígitos"}
@@ -213,7 +213,7 @@ export const Donate = () => {
                 type="number"
                 {...register("valor", { valueAsNumber: true })}
                 placeholder="Montante a doar"
-                className="rounded-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
+                className="rounded-md border border-blue-600 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
               />
               {errors.valor && (
                 <span className="text-red-500 text-sm">{errors.valor.message}</span>
@@ -222,7 +222,7 @@ export const Donate = () => {
 
             <Button
               type="submit"
-              className="w-full mt-4 rounded-full bg-green-600 text-white font-semibold hover:scale-105 hover:bg-green-700 transition"
+              className="w-full mt-4 rounded-full bg-green-600 text-white font-semibold hover:scale-105 hover:bg-green-600 transition"
             >
               Doar
             </Button>
