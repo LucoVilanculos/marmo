@@ -36,7 +36,11 @@ export const About = () => {
             	</h1>
       		</section>
 
-			
+			<img
+		            src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg"
+		            alt="Marmo Pic"
+		            className="h-[400px] object-cover mb-2 shadow-md w-full"
+         		 />
 
 			<p className="max-w-2xl m-auto text-base md:text-lg text-center mb-10 p-4 text-black dark:text-gray-300">
 				A{" "}
