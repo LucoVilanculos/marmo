@@ -22,7 +22,9 @@ export function Header() {
     { label: "Início", href: "/" },
     { label: "Sobre", href: "/about" },
     {label: "Galeria", href: "/gallery" },
-    {label: "Contacto", href: "/contact"}
+    {label: "Contacto", href: "/contact"},
+    {label: "Donativo", href: "/donate"},
+    { label: "Voluntariado", href: "/volunteer" },
   ];
 
   const session = localStorage.getItem("session");
@@ -48,7 +50,7 @@ export function Header() {
         <div className="flex items-center">
           <NavLink to="/" className="flex items-start font-bold text-green-600 mr-5 justify-start">
             <img
-              src="./public/img/marmo-logo.png"
+              src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137280/marmo-logo_nq0efc.png"
               alt="MARMO logo"
               className="w-10 h-10 mr-5 rounded-2xl md:w-10 md:h-10"
             />

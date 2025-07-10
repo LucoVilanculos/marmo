@@ -39,30 +39,30 @@ export const Home = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
-              <span className="">MAR</span>MO
+      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+              MARMO
             </h1>
-            <p className="text-lg md:text-xl text-indigo-800 tracking-wider font-bold">
-              <span className="">Mar Moç</span>ambique
+            <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
+              Mar Moçambique
             </p>
       </section>
 
       <section
-        className="overflow-hidden max-w-[100%] mx-auto h-[500px] relative"
+        className="overflow-hidden max-w-[100%] mx-auto h-[600px] relative mt-1.5 mb-1.5"
         ref={emblaRef}
       >
         <div className="flex transition-transform duration-1000 ease-in-out">
           {[
-            "../public/img/ocean.jpg",
-            "../public/img/marmo-pic.jpg",
-            "../public/img/saving-ocean.jpg",
-            "../public/img/splash-marmo.jpg",
-            "../public/img/live.jpg",
-            "../public/img/marmo-acoes.jpg",
-            "../public/img/living-ocean.jpg",
-            "../public/img/mangal-marmo.jpg",
-            "../public/img/mar.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137279/marmo-acoes_unpt2b.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/living-ocean_e8ty5e.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137278/mangal-marmo_jscknk.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
           ].map((img, index) => (
             <div
               key={index}
@@ -71,7 +71,7 @@ export const Home = () => {
               <img
                 src={img}
                 alt={`Banner ${index + 1}`}
-                className="h-[500px] object-cover shadow-md w-full"
+                className="h-[600px] object-cover shadow-md w-full"
               />
             </div>
           ))}
@@ -86,6 +86,44 @@ export const Home = () => {
         </Link>
       </section>
 
+      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 py-10 px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da Marmo</h2>
+          <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
+            A <strong className="text-green-500">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Actuamos em educação, conservação,
+            turismo sustentável, pesquisa científica e apoio às comunidades costeiras.
+          </p>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
+            {[
+              "Conservação Marinha",
+              "Educação Ambiental",
+              "Turismo Sustentável",
+              "Pesquisa Científica",
+            ].map((area, i) => (
+              <motion.div
+                key={area}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-slate-100 dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
+              >
+                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {`Descrição institucional sobre "${area}". Adaptar conforme conteúdo da ONG.`}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+      </section>
+
       <section className="bg-green-100 dark:bg-gray-900 py-10 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -94,23 +132,28 @@ export const Home = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-green-700 mb-6">Nossa Missão</h2>
+          <img
+            src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg"
+            alt="Marmo Pic"
+            className="h-[400px] object-cover shadow-md w-full"
+          />
+          <h2 className="text-3xl font-bold text-green-600 mb-6">Nossa Missão</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
             A <strong className="text-green-600">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Actuamos em educação, conservação,
             turismo sustentável, pesquisa científica e apoio às comunidades costeiras.
           </p>
           <Link to={"/volunteer"}>
-            <Button variant="ghost" className="mt-4 bg-green-600 hover:bg-green-500 transition px-6 py-3 rounded text-white font-semibold ">
+            <Button variant="ghost" className="mt-4 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold transition-transform hover:scale-105">
                 Quer ser voluntário?
             </Button>
           </Link>
         </motion.div>
       </section>
 
-      <section className="bg-white dark:bg-gray-700 py-10 px-6">
+      <section className="bg-white dark:bg-gray-600 py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-900 dark:text-green-600 text-center mb-12">Nossas Áreas de Atuação</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
             {[
               "Conservação Marinha",
               "Educação Ambiental",
@@ -125,10 +168,10 @@ export const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm"
+                className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
               >
                 <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   {`Descrição institucional sobre "${area}". Adaptar conforme conteúdo da ONG.`}
                 </p>
               </motion.div>
@@ -141,7 +184,7 @@ export const Home = () => {
         <h2 className="text-3xl font-bold text-green-600 text-center mb-10">
           Perguntas Frequentes
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8 ">
           {faqs.map((faq, idx) => (
             <motion.div
               key={idx}
@@ -150,14 +193,14 @@ export const Home = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg shadow-sm">
+              <Card className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg shadow-sm transition-transform hover:scale-105">
                 <CardHeader>
                   <CardTitle className="text-blue-900 dark:text-blue-300 text-lg">
                     {faq.question}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700  dark:text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-600  dark:text-gray-300">{faq.answer}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -165,7 +208,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="bg-indigo-950 text-white py-16 px-6 text-center">
+      <section className="bg-blue-950 text-white py-16 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
