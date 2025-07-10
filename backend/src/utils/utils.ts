@@ -15,7 +15,7 @@ export async function sendEmail({
 }) {
   try {
     await resend.emails.send({
-      from: "no-reply@marmo.org",
+      from: "http://localhost:3002",
       to,
       subject,
       html,

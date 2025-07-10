@@ -31,7 +31,7 @@ export const register = async (req: Request, res: Response): Promise<any> => {
   await user.save();
 
   await sendEmail({
-    to: process.env.CONTACT_EMAIL || "",
+    to: process.env.CONTACT_EMAIL || "luisisauravilanculos@gmail.com",
     subject: "Novo registro de usuário",
     html: `
       <h2>Novo usuário registrado</h2>
