@@ -7,7 +7,7 @@ export const ErrorPage = () => {
       bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900"
     >
       <div className="text-center flex flex-col items-center gap-4 p-6">
-        <h1 className="text-[10rem] mb-2 font-extrabold text-blue-500 animate-pulse leading-none">
+        <h1 className="text-[6rem] mb-2 font-extrabold text-blue-500 animate-pulse leading-none">
           PÁGINA NÃO ENCONTRADA
         </h1>
         <p className="text-xl md:text-3xl, lg:text-5xl font-bold text-green-600 dark:text-green-500 ">
