@@ -55,14 +55,14 @@ export const Home = () => {
         <div className="flex transition-transform duration-1000 ease-in-out">
           {[
             "https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/marmo-pic_ghqj1l.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
             "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
-            " https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/live_ghqj1l.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/marmo-acoes_ghqj1l.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/living-ocean_ghqj1l.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/mangal-marmo_ghqj1l.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/mar_ghqj1l.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137279/marmo-acoes_unpt2b.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/living-ocean_e8ty5e.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137278/mangal-marmo_jscknk.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
           ].map((img, index) => (
             <div
               key={index}
