@@ -132,6 +132,11 @@ export const Home = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
+          <img
+            src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg"
+            alt="Marmo Pic"
+            className="h-[400px] object-cover shadow-md w-full"
+          />
           <h2 className="text-3xl font-bold text-green-600 mb-6">Nossa Missão</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
             A <strong className="text-green-600">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Actuamos em educação, conservação,
