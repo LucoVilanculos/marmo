@@ -55,6 +55,12 @@ export const Volunteer = () => {
         </h1>
       </section>
 
+      <img
+		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg"
+		    alt="Marmo Pic"
+		    className="h-[400px] object-cover mb-2 shadow-md w-full"
+      />
+
       <div className="flex flex-col items-center gap-10 w-full max-w-6xl">
         <div className="flex-1 text-center mt-5 md:text-left">
       
