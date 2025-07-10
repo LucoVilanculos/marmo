@@ -91,6 +91,12 @@ export const Donate = () => {
         </h1>
       </section>
 
+      <img
+		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg"
+		    alt="Marmo Pic"
+		    className="h-[400px] object-cover mb-2 shadow-md w-full"
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
