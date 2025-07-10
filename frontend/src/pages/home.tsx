@@ -39,11 +39,11 @@ export const Home = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
+      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
               MARMO
             </h1>
-            <p className="text-lg md:text-xl text-indigo-800 tracking-wider font-bold">
+            <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
               Mar Moçambique
             </p>
       </section>
@@ -54,15 +54,15 @@ export const Home = () => {
       >
         <div className="flex transition-transform duration-1000 ease-in-out">
           {[
-            "../public/img/ocean.jpg",
-            "../public/img/marmo-pic.jpg",
-            "../public/img/saving-ocean.jpg",
-            "../public/img/splash-marmo.jpg",
-            "../public/img/live.jpg",
-            "../public/img/marmo-acoes.jpg",
-            "../public/img/living-ocean.jpg",
-            "../public/img/mangal-marmo.jpg",
-            "../public/img/mar.jpg",
+            "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+            "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/marmo-pic_ghqj1l.jpg",
+            "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+            "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
+            "../public/img/live.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/live_ghqj1l.jpg",
+            "../public/img/marmo-acoes.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/marmo-acoes_ghqj1l.jpg",
+            "../public/img/living-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/living-ocean_ghqj1l.jpg",
+            "../public/img/mangal-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/mangal-marmo_ghqj1l.jpg",
+            "../public/img/mar.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/mar_ghqj1l.jpg",
           ].map((img, index) => (
             <div
               key={index}
@@ -86,6 +86,44 @@ export const Home = () => {
         </Link>
       </section>
 
+      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 py-10 px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da Marmo</h2>
+          <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
+            A <strong className="text-green-500">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Actuamos em educação, conservação,
+            turismo sustentável, pesquisa científica e apoio às comunidades costeiras.
+          </p>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
+            {[
+              "Conservação Marinha",
+              "Educação Ambiental",
+              "Turismo Sustentável",
+              "Pesquisa Científica",
+            ].map((area, i) => (
+              <motion.div
+                key={area}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-slate-100 dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
+              >
+                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {`Descrição institucional sobre "${area}". Adaptar conforme conteúdo da ONG.`}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+      </section>
+
       <section className="bg-green-100 dark:bg-gray-900 py-10 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -94,7 +132,7 @@ export const Home = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-green-700 mb-6">Nossa Missão</h2>
+          <h2 className="text-3xl font-bold text-green-600 mb-6">Nossa Missão</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
             A <strong className="text-green-600">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Actuamos em educação, conservação,
             turismo sustentável, pesquisa científica e apoio às comunidades costeiras.
@@ -107,7 +145,7 @@ export const Home = () => {
         </motion.div>
       </section>
 
-      <section className="bg-white dark:bg-gray-700 py-10 px-6">
+      <section className="bg-white dark:bg-gray-600 py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-900 dark:text-green-600 text-center mb-12">Nossas Áreas de Atuação</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
@@ -128,7 +166,7 @@ export const Home = () => {
                 className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
               >
                 <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   {`Descrição institucional sobre "${area}". Adaptar conforme conteúdo da ONG.`}
                 </p>
               </motion.div>
@@ -157,7 +195,7 @@ export const Home = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700  dark:text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-600  dark:text-gray-300">{faq.answer}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -165,7 +203,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="bg-indigo-950 text-white py-16 px-6 text-center">
+      <section className="bg-blue-950 text-white py-16 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}

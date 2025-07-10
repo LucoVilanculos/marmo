@@ -5,87 +5,87 @@ import { motion } from "framer-motion";
 
 const imagesByProvince = {
   Maputo: [
-    "../public/img/ocean.jpg",
-    "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
-    "../public/img/live.jpg",
-    "../public/img/marmo-acoes.jpg",
-    "../public/img/living-ocean.jpg",
-    "../public/img/mangal-marmo.jpg",
-    "../public/img/mar.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+    "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
+    "../public/img/live.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg",
+    "../public/img/marmo-acoes.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137279/marmo-acoes_unpt2b.jpg",
+    "../public/img/living-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/living-ocean_e8ty5e.jpg",
+    "../public/img/mangal-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137278/mangal-marmo_jscknk.jpg",
+    "../public/img/mar.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
   ],
   Matola: [
-    "../public/img/ocean.jpg",
-    "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
-    "../public/img/live.jpg",
-    "../public/img/marmo-acoes.jpg",
-    "../public/img/living-ocean.jpg",
-    "../public/img/mangal-marmo.jpg",
-    "../public/img/mar.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+    "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
+    "../public/img/live.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg",
+    "../public/img/marmo-acoes.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137279/marmo-acoes_unpt2b.jpg",
+    "../public/img/living-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/living-ocean_e8ty5e.jpg",
+    "../public/img/mangal-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137278/mangal-marmo_jscknk.jpg",
+    "../public/img/mar.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
   ],
   Gaza: [
-    "../public/img/ocean.jpg",
-    "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
-    "../public/img/live.jpg",
-    "../public/img/marmo-acoes.jpg",
-    "../public/img/living-ocean.jpg",
-    "../public/img/mangal-marmo.jpg",
-    "../public/img/mar.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+    "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
+    "../public/img/live.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg",
+    "../public/img/marmo-acoes.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137279/marmo-acoes_unpt2b.jpg",
+    "../public/img/living-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/living-ocean_e8ty5e.jpg",
+    "../public/img/mangal-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137278/mangal-marmo_jscknk.jpg",
+    "../public/img/mar.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
   ],
   Inhambane: [
-    "../public/img/ocean.jpg",
-    "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
-    "../public/img/live.jpg",
-    "../public/img/marmo-acoes.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+    "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
+    "../public/img/live.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg",
+    "../public/img/marmo-acoes.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137279/marmo-acoes_unpt2b.jpg",
   ],
   Sofala: [
-    "../public/img/ocean.jpg",
-    "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+    "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
   ],
   Manica: [
-    "../public/img/ocean.jpg",
-    "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+    "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
   ],
   Zambézia: [
-    "../public/img/ocean.jpg",
-    "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+    "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
   ],
   Nampula: [
-    "../public/img/ocean.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
     "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
   ],
   Tete: [
-    "../public/img/ocean.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
     "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
   ],
   Niassa: [
-    "../public/img/ocean.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
     "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
   ],
   CaboDelegado: [
-    "../public/img/ocean.jpg",
+    "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
     "../public/img/marmo-pic.jpg",
-    "../public/img/saving-ocean.jpg",
-    "../public/img/splash-marmo.jpg",
+    "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+    "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
   ],
 };
 
@@ -93,12 +93,12 @@ export const Gallery = () => {
   const [selectedProvince, setSelectedProvince] = useState("Maputo");
 
   return (
-    <section className="flex flex-col items-center p-4 bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
+    <section className="flex flex-col items-center p-4 bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
       <section className="text-center py-7 px-6">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
-          Galeria
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+          GALERIA
         </h1>
-        <p className="text-lg md:text-xl text-indigo-800 dark:text-green-600 tracking-wider font-bold">
+        <p className="text-lg md:text-xl text-blue-800 dark:text-green-600 tracking-wider font-bold">
           Actividades feitas por nós
         </p>
       </section>

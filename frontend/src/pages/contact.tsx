@@ -35,10 +35,10 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 font-sans">
+    <div className="flex flex-col items-center bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
       <section className="text-center py-7 px-6">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-indigo-700 dark:text-green-600 drop-shadow-md tracking-wider">
-          Fale Conosco
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+          FALE CONOSCO
         </h1>
       </section>
       
@@ -48,18 +48,18 @@ export const ContactPage = () => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl p-4"
       >
-        <section className="flex-1 max-w-md text-indigo-900 dark:text-white">
+        <section className="flex-1 max-w-md text-blue-900 dark:text-white">
 
-          <article className="text-base mt-4 text-gray-700 mb-5 dark:text-blue-100">
-            A <span className="font-semibold text-green-600 dark:text-indigo-900">MARMO</span> está sempre aberta ao diálogo. Se você tiver dúvidas, sugestões ou quiser apoiar nossa missão, envie-nos uma mensagem através do formulário. Nossa equipa responderá o mais breve possível.
+          <article className="text-base mt-4 text-gray-6 mb-5 dark:text-blue-100">
+            A <span className="font-semibold text-green-600 dark:text-blue-900">MARMO</span> está sempre aberta ao diálogo. Se você tiver dúvidas, sugestões ou quiser apoiar nossa missão, envie-nos uma mensagem através do formulário. Nossa equipa responderá o mais breve possível.
           </article>
 
-          <section className="bg-gradient-to-r from-indigo-100 to-indigo-300 dark:from-gray-800 dark:to-gray-900 backdrop-blur-md transition-transform hover:scale-105 rounded-2xl p-6 w-full max-w-xl shadow-2xl space-y-6 animate-fade-in">
+          <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 backdrop-blur-md transition-transform hover:scale-105 rounded-2xl p-6 w-full max-w-xl shadow-2xl space-y-6 animate-fade-in">
             <div className="text-left space-y-3">
-              <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><Mail size={24}/> Email:</span> <a href="mailto:marmo@gmail.com" className="underline">marmo@gmail.com</a></p>
-              <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><PhoneCall size={24}/> Contacto:</span> +258 86 000 0000</p>
-              <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><PhoneCallIcon size={24}/> Opcional:</span> +258 83 114 0000</p>
-              <p className="flex"><span className="font-semibold text-indigo-950 dark:text-green-600 flex mr-1"><LocateIcon size={24}/> Endereço:</span> Av. Mao Tse Tung</p>
+              <p className="flex"><span className="font-semibold text-blue-950 dark:text-green-600 flex mr-1"><Mail size={24}/> Email:</span> <a href="mailto:marmo@gmail.com" className="underline">marmo@gmail.com</a></p>
+              <p className="flex"><span className="font-semibold text-blue-950 dark:text-green-600 flex mr-1"><PhoneCall size={24}/> Contacto:</span> +258 86 000 0000</p>
+              <p className="flex"><span className="font-semibold text-blue-950 dark:text-green-600 flex mr-1"><PhoneCallIcon size={24}/> Opcional:</span> +258 83 114 0000</p>
+              <p className="flex"><span className="font-semibold text-blue-950 dark:text-green-600 flex mr-1"><LocateIcon size={24}/> Endereço:</span> Av. Mao Tse Tung</p>
             </div>
           </section>
           
@@ -78,7 +78,7 @@ export const ContactPage = () => {
                     id="name"
                     type="text"
                     {...register("name")}
-                    className="rounded-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
+                    className="rounded-md border border-blue-6 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
                   />
                   {errors.name && <span className="text-sm text-red-600">{errors.name.message}</span>}
                 </div>
@@ -90,7 +90,7 @@ export const ContactPage = () => {
                     id="email"
                     type="email"
                     {...register("email")}
-                    className="rounded-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
+                    className="rounded-md border border-blue-6 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
                   />
                   {errors.email && <span className="text-sm text-red-600">{errors.email.message}</span>}
                 </div>
@@ -102,7 +102,7 @@ export const ContactPage = () => {
                     id="subject"
                     type="text"
                     {...register("subject")}
-                    className="rounded-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
+                    className="rounded-md border border-blue-6 focus:ring-2 focus:ring-blue-400 bg-white dark:bg-[#28335a] dark:text-white dark:border-blue-400"
                   />
                   {errors.subject && <span className="text-sm text-red-600">{errors.subject.message}</span>}
                 </div>
@@ -114,7 +114,7 @@ export const ContactPage = () => {
                     id="description"
                     rows={4}
                     {...register("description")}
-                    className="rounded-md border border-blue-700 focus:ring-2 focus:ring-blue-400 bg-white py-2 px-4 dark:bg-[#28335a] dark:text-white dark:border-blue-400"
+                    className="rounded-md border border-blue-6 focus:ring-2 focus:ring-blue-400 bg-white py-2 px-4 dark:bg-[#28335a] dark:text-white dark:border-blue-400"
                   />
                   {errors.description && <span className="text-sm text-red-600">{errors.description.message}</span>}
                 </div>
