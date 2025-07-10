@@ -41,6 +41,12 @@ export const ContactPage = () => {
           FALE CONOSCO
         </h1>
       </section>
+
+      <img
+		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg"
+		    alt="Marmo Pic"
+		    className="h-[400px] object-cover mb-2 shadow-md w-full"
+      />
       
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
