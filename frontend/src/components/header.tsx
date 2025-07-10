@@ -50,7 +50,7 @@ export function Header() {
         <div className="flex items-center">
           <NavLink to="/" className="flex items-start font-bold text-green-600 mr-5 justify-start">
             <img
-              src="./public/img/marmo-logo.png || https://res.cloudinary.com/dtopurogz/image/upload/v1752137280/marmo-logo_nq0efc.png"
+              src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137280/marmo-logo_nq0efc.png"
               alt="MARMO logo"
               className="w-10 h-10 mr-5 rounded-2xl md:w-10 md:h-10"
             />
