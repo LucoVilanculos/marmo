@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormRouter = void 0;
+const express_1 = require("express");
+const form_controller_1 = require("../controllers/form.controller");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const authorization_middleware_1 = require("../middleware/authorization.middleware");
+exports.FormRouter = (0, express_1.Router)();
+exports.FormRouter.post("/", form_controller_1.createFormMessage);
+exports.FormRouter.get("/", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), form_controller_1.getFormMessages);
+exports.FormRouter.delete("/:id", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), form_controller_1.deleteFormMessage);

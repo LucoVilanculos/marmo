@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PublicationRouter = void 0;
+const express_1 = require("express");
+const publication_controller_1 = require("../controllers/publication.controller");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const authorization_middleware_1 = require("../middleware/authorization.middleware");
+exports.PublicationRouter = (0, express_1.Router)();
+exports.PublicationRouter.post("/", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), publication_controller_1.createPublication);
+exports.PublicationRouter.get("/", publication_controller_1.getPublications);
+exports.PublicationRouter.put("/:id", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), publication_controller_1.updatePublication);
+exports.PublicationRouter.delete("/:id", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), publication_controller_1.deletePublication);

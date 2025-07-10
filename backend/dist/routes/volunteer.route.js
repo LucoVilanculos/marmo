@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VolunteerRouter = void 0;
+const express_1 = require("express");
+const volunteer_controller_1 = require("../controllers/volunteer.controller");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const authorization_middleware_1 = require("../middleware/authorization.middleware");
+exports.VolunteerRouter = (0, express_1.Router)();
+exports.VolunteerRouter.post("/", volunteer_controller_1.createVolunteer);
+exports.VolunteerRouter.get("/", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), volunteer_controller_1.getVolunteers);
+exports.VolunteerRouter.delete("/:id", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), volunteer_controller_1.deleteVolunteer);

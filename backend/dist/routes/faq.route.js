@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FaqRouter = void 0;
+const express_1 = require("express");
+const faq_controller_1 = require("../controllers/faq.controller");
+exports.FaqRouter = (0, express_1.Router)();
+exports.FaqRouter.post("/", faq_controller_1.createFaq);
+exports.FaqRouter.get("/", faq_controller_1.getAllFaqs);
+exports.FaqRouter.get("/:id", faq_controller_1.getFaqById);
+exports.FaqRouter.put("/:id", faq_controller_1.updateFaq);
+exports.FaqRouter.delete("/:id", faq_controller_1.deleteFaq);

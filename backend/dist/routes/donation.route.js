@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DonationRouter = void 0;
+const express_1 = require("express");
+const donation_controller_1 = require("../controllers/donation.controller");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const authorization_middleware_1 = require("../middleware/authorization.middleware");
+exports.DonationRouter = (0, express_1.Router)();
+exports.DonationRouter.post("/", donation_controller_1.createDonation);
+exports.DonationRouter.get("/", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), donation_controller_1.getDonations);
+exports.DonationRouter.delete("/:id", auth_middleware_1.AuthenticationToken, (0, authorization_middleware_1.authorizeRoles)("admin"), donation_controller_1.deleteDonation);
