@@ -54,15 +54,15 @@ export const Home = () => {
       >
         <div className="flex transition-transform duration-1000 ease-in-out">
           {[
-            "../public/img/ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
-            "../public/img/marmo-pic.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/marmo-pic_ghqj1l.jpg",
-            "../public/img/saving-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
-            "../public/img/splash-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
-            "../public/img/live.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/live_ghqj1l.jpg",
-            "../public/img/marmo-acoes.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/marmo-acoes_ghqj1l.jpg",
-            "../public/img/living-ocean.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/living-ocean_ghqj1l.jpg",
-            "../public/img/mangal-marmo.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/mangal-marmo_ghqj1l.jpg",
-            "../public/img/mar.jpg || https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/mar_ghqj1l.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/marmo-pic_ghqj1l.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+            " https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/live_ghqj1l.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/marmo-acoes_ghqj1l.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/living-ocean_ghqj1l.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/mangal-marmo_ghqj1l.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/mar_ghqj1l.jpg",
           ].map((img, index) => (
             <div
               key={index}
