@@ -15,7 +15,7 @@ export async function sendEmail({
 }) {
   try {
     await resend.emails.send({
-      from: "http://localhost:3002",
+      from: "Marmo <info@binario.co.mz>>",
       to,
       subject,
       html,
@@ -26,4 +26,20 @@ export async function sendEmail({
     console.error("Erro ao enviar e-mail:", error);
     return false;
   }
+}
+
+
+export async function Email(destinatary:string) {
+  const { data, error } = await resend.emails.send({
+    from: "Marmo <info@binario.co.mz>",
+    to: [destinatary],
+    subject: "Cadastro na Marmo",
+    html: "<strong>Bem vindo a Marmo</strong><p>Obrigado por se cadastrar como voluntário.</p>",
+  });
+
+  if (error) {
+   throw new Error(`Failed to send email: ${error.message}`);
+  }
+
+  return data;
 }

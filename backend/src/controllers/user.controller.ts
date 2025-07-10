@@ -41,6 +41,7 @@ export const register = async (req: Request, res: Response): Promise<any> => {
     `,
   });
 
+
   return res.status(201).json({ message: "User registered successfully" });
 };
 
