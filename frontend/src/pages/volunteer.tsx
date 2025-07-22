@@ -49,17 +49,17 @@ export const Volunteer = () => {
         <a href="/">Voltar</a>
       </Button>
 
-      <section className="text-center py-7 px-6">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-          QUER SER VOLUNTÁRIO?
-        </h1>
-      </section>
-
       <img
 		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117029/IMG_20231201_164320_HDR_jxyxlt.jpg"
 		    alt="Marmo Pic"
 		    className="h-[400px] object-cover mb-2 shadow-md w-full"
       />
+
+      <section className="ml-10 mt-6 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+          QUER SER VOLUNTÁRIO?
+        </h1>
+      </section>
 
       <div className="flex flex-col items-center gap-10 w-full max-w-6xl">
         <div className="flex-1 text-center mt-5 md:text-left">

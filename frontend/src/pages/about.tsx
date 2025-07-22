@@ -29,17 +29,18 @@ const aboutItems = [
 export const About = () => {
 	return (
 		<section className="flex flex-col bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
-			<section className="text-center py-10 px-6">
-				<h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-					QUEM SOMOS
-				</h1>
-			</section>
-
+		
 			<img
 				src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117060/IMG_20231201_151858_HDR_plbufy.jpg"
 				alt="Marmo Pic"
 				className="h-[400px] object-cover mb-2 shadow-md w-full"
 			/>
+
+			<section className="ml-10 mt-6 mb-6">
+				<h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+					QUEM SOMOS
+				</h1>
+			</section>
 
 			<p className="max-w-4xl m-auto text-base md:text-lg text-center mb-10 p-4 text-black dark:text-gray-300">
 				A Associação Mar Mocambique{" "},

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import useEmblaCarousel from "embla-carousel-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { motion } from "framer-motion";
 import {
@@ -47,7 +48,7 @@ const fetchFaqs = async () => [
 
 export const Home = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  useEmblaAutoPlay(emblaApi, 15000);
+  useEmblaAutoPlay(emblaApi, 300000);
   const [faqs, setFaqs] = useState<{ question: string; answer: string }[]>([]);
 
   useEffect(() => {
@@ -84,24 +85,40 @@ export const Home = () => {
             </div>
           ))}
         </div>
+        <button
+          className="absolute left-4 top-1/2 z-40 -translate-y-1/2 bg-white/80 hover:bg-green-600 text-green-700 hover:text-white rounded-full p-2 shadow-lg transition"
+          onClick={() => emblaApi && emblaApi.scrollPrev()}
+          aria-label="Anterior"
+        >
+          <ArrowLeft className="w-6 h-6" />
+        </button>
+        <button
+          className="absolute right-4 top-1/2 z-40 -translate-y-1/2 bg-white/80 hover:bg-green-600 text-green-700 hover:text-white rounded-full p-2 shadow-lg transition"
+          onClick={() => emblaApi && emblaApi.scrollNext()}
+          aria-label="Próximo"
+        >
+          <ArrowRight className="w-6 h-6" />
+        </button>
         <Link to={"/gallery"}>
           <Button
             variant="ghost"
-            className="absolute bottom-8 right-8  bg-green-600 hover:bg-green-500  px-6 py-3 rounded text-white font-semibold shadow-2xl transition"
+            className="absolute bottom-8 right-8 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold shadow-2xl transition"
           >
             Ver Mais
           </Button>
         </Link>
       </section>
 
-      <section className="ml-5 mr-5 mb-5">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-          MARMO
-        </h1>
-        <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
-          Mar Moçambique
-        </p>
+      <section className="ml-10 mt-6 mb-6">
+          <h1 className="text-5xl md:text-7xl font-black text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+            MARMO
+          </h1>
+          <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
+            Mar Moçambique
+          </p>
       </section>
+
+
 
       <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 py-10 px-6 text-center">
         <motion.div
@@ -111,7 +128,7 @@ export const Home = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da Marmo</h2>
+          <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da MARMO</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
             Ser um centro catalisador para o desenvolvimento e a difusão de
             soluções inovadoras para o uso sustentável da zona costeira e do
@@ -119,12 +136,12 @@ export const Home = () => {
             natureza para a sociedade e para os sectores públicos e privados.
           </p>
 
-          <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
+          <p className="text-md text-gray-800 dark:text-green-100 leading-relaxed">
             Para a consecução de seus objectivos/responsabilidades sociais, a <strong className="font-bold text-green-600">MARMO </strong>
             poderá
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8 mt-6">
           {area.map((area, i) => (
             <motion.div
               key={area}
@@ -132,34 +149,29 @@ export const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="bg-slate-100 dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
+              className="bg-slate-100 dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105 "
             >
-              <h3 className="text-lg font-normal text-blue-950 dark:text-blue-300 mb-2">{area}</h3>
+              <h3 className="text-md text-blue-950 dark:text-blue-300">{area}</h3>
             </motion.div>
           ))}
         </div>
       </section>
 
-      <section className="bg-green-100 dark:bg-gray-900 py-10 px-6 text-center">
+      <section className="bg-green-100 dark:bg-gray-900 py-10 px-0 text-center p-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="w-full p-4"
         >
-          <img
-            src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117029/IMG_20231201_164320_HDR_jxyxlt.jpg"
-            alt="Marmo Pic"
-            className="h-[400px] object-cover shadow-md w-full"
-          />
           <h2 className="text-3xl font-bold text-green-600 mb-6">Nossa Missão</h2>
           <ul className="text-lg text-gray-800 dark:text-green-100 leading-relaxed space-y-4 text-center list-disc pl-6">
             <li>
               <span className="font-semibold text-green-700 dark:text-green-300">Proteção e conservação:</span> Contribuir para a proteção, preservação, conservação, recuperação e manejo sustentável do ambiente costeiro, do património paisagístico e dos bens e valores culturais da costa moçambicana.
             </li>
             <li>
-              <span className="font-semibold text-green-700 dark:text-green-300">Ações sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros buscando a substituição de práticas impactantes por actividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade
+              <span className="font-semibold text-green-700 dark:text-green-300">Acções sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros buscando a substituição de práticas impactantes por actividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade
             </li>
           </ul>
           <Link to={"/volunteer"}>
@@ -197,7 +209,7 @@ export const Home = () => {
         <h2 className="text-3xl font-bold text-green-600 text-center mb-10">
           Perguntas Frequentes
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl-grid-cols-5 gap-8 ">
           {faqs.map((faq, idx) => (
             <motion.div
               key={idx}

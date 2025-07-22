@@ -64,10 +64,14 @@ export const Gallery = () => {
 
   return (
     <section className="flex flex-col items-center p-4 bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
-      <section className="text-center py-7 px-6">
+      
+      <section className="mb-10 ml-6 mt-6">
         <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
           GALERIA
         </h1>
+      </section>
+      
+      <section className="text-center py-7 px-6">
         <p className="text-lg md:text-xl text-blue-800 dark:text-green-600 tracking-wider font-bold">
           Actividades feitas por nós
         </p>

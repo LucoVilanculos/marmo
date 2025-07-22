@@ -9,6 +9,7 @@ import { Gallery } from "./gallery";
 import { AdminPage } from "./admin";
 import { ErrorPage } from "./errorpage";
 import {Volunteer} from "./volunteer";
+import {Donate} from "./donate"
 
 export {
     Home,
@@ -21,5 +22,6 @@ export {
     ErrorPage,
     Partners,
     Team,
-    Projects
+    Projects,
+    Donate
 };

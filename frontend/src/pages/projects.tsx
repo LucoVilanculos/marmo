@@ -34,9 +34,11 @@ export const Projects = () => {
 
   return (
     <section className="flex flex-col items-center bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans min-h-screen py-10">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 mb-8 drop-shadow-md tracking-wider">
+  <section className="mb-10 ml-6 mt-6">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 mb-8 drop-shadow-md tracking-wider">
         PROJECTOS MARMO
       </h1>
+  </section>
       <p className="text-lg md:text-xl text-blue-700 dark:text-green-300 font-bold mb-10 text-center max-w-2xl">
         Conheça os principais projectos que promovem a conservação e educação ambiental no mar moçambicano.
       </p>
