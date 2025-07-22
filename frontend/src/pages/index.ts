@@ -1,3 +1,6 @@
+import { Projects } from './projects';
+import { Team } from './team';
+import { Partners } from './partners';
 import { Home } from "./home";
 import { About } from "./about";
 import { LoginPage } from "./login";
@@ -18,4 +21,7 @@ export {
     AdminPage,
     Volunteer,
     ErrorPage,
+    Partners,
+    Team,
+    Projects
 };

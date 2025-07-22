@@ -12,6 +12,23 @@ import {
 import { Button } from "../components/ui/button";
 import { useEmblaAutoPlay } from "../context/autoplay";
 
+const areasDeActuacao = [
+  {
+    title: "Apoio Comunitário",
+    description: "actuamos emprol da melhoria de vida, uso de sustentável dos recursos naturais e encarra como fonte de referência para novos desafios, promovendo a inovação contínua",
+  },
+  {
+    title: "Tecnologia & Inovação",
+    description: "Somos conduzidos em total conformidade com a legislação ambiental, com a busca da melhoria dos processos e com a aplicação de tecnologias adequadas e ecologicamente aceites",
+  },
+];
+
+const area = [
+ "Celebrar termos de parcerias com instituições, empresas, organizacoes não governamental, associacoes, universidades públicas ou privadas, nacionais ou estrangeiras, sobre assuntos ligados aos seus objectivos, interesses e competências" ,
+ "Subvencionar, total ou parcialmente, projectos de desenvolvimento, geração de rendimento de pesquisa individual ou de equipas, podendo explorar comercialmente produtos resultantes dessas actividades, mediante contrato ou acordo específico" ,
+ "Apoiar a comunidade a desenvolver projectos de sustentabilidade ecologica, inovação tecnológica, desenvolvimento comunitário e de geração de rendimento." ,
+];
+
 
 const fetchFaqs = async () => [
   {
@@ -96,17 +113,19 @@ export const Home = () => {
         >
           <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da Marmo</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-            A <strong className="text-green-500">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Actuamos em educação, conservação,
-            turismo sustentável, pesquisa científica e apoio às comunidades costeiras.
+        Ser um centro catalisador para o desenvolvimento e a difusão de
+soluções inovadoras para o uso sustentável da zona costeira e do
+mar moçambicano servindo como exemplo em conservação da
+natureza para a sociedade e para os sectores públicos e privados.
+          </p>
+         
+          <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
+            Para a consecução de seus objectivos/responsabilidades sociais, a <strong className="font-bold text-green-600">MARMO </strong> 
+ poderá
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
-            {[
-              "Conservação Marinha",
-              "Educação Ambiental",
-              "Turismo Sustentável",
-              "Pesquisa Científica",
-            ].map((area, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8">
+            {area.map((area, i) => (
               <motion.div
                 key={area}
                 initial={{ opacity: 0, y: 20 }}
@@ -116,9 +135,6 @@ export const Home = () => {
                 className="bg-slate-100 dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
               >
                 <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  {`Descrição institucional sobre "${area}". Adaptar conforme conteúdo da ONG.`}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -138,10 +154,14 @@ export const Home = () => {
             className="h-[400px] object-cover shadow-md w-full"
           />
           <h2 className="text-3xl font-bold text-green-600 mb-6">Nossa Missão</h2>
-          <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-            A <strong className="text-green-600">MARMO</strong> é dedicada à proteção da biodiversidade marinha de Moçambique. Actuamos em educação, conservação,
-            turismo sustentável, pesquisa científica e apoio às comunidades costeiras.
-          </p>
+           <ul className="text-lg text-gray-800 dark:text-green-100 leading-relaxed space-y-4 text-center list-disc pl-6">
+          <li>
+            <span className="font-semibold text-green-700 dark:text-green-300">Proteção e conservação:</span> Contribuir para a proteção, preservação, conservação, recuperação e manejo sustentável do ambiente costeiro, do património paisagístico e dos bens e valores culturais da costa moçambicana.
+          </li>
+          <li>
+            <span className="font-semibold text-green-700 dark:text-green-300">Ações sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros buscando a substituição de práticas impactantes por actividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade
+          </li>
+          </ul>
           <Link to={"/volunteer"}>
             <Button variant="ghost" className="mt-4 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold transition-transform hover:scale-105">
                 Quer ser voluntário?
@@ -153,26 +173,19 @@ export const Home = () => {
       <section className="bg-white dark:bg-gray-600 py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-900 dark:text-green-600 text-center mb-12">Nossas Áreas de Atuação</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
-            {[
-              "Conservação Marinha",
-              "Educação Ambiental",
-              "Turismo Sustentável",
-              "Pesquisa Científica",
-              "Apoio Comunitário",
-              "Tecnologia & Inovação",
-            ].map((area, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl-grid-cols-2 gap-8">
+            {areasDeActuacao.map((areasDeActuacao, i) => (
               <motion.div
-                key={area}
+                key={areasDeActuacao.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
               >
-                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
+                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{areasDeActuacao.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  {`Descrição institucional sobre "${area}". Adaptar conforme conteúdo da ONG.`}
+                  {areasDeActuacao.description}
                 </p>
               </motion.div>
             ))}

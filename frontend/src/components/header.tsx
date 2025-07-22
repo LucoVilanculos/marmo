@@ -23,8 +23,10 @@ export function Header() {
     { label: "Sobre", href: "/about" },
     {label: "Galeria", href: "/gallery" },
     {label: "Contacto", href: "/contact"},
-    {label: "Donativo", href: "/donate"},
     { label: "Voluntariado", href: "/volunteer" },
+    { label: "Equipe", href: "/team" },
+    { label: "Parceiros", href: "/partners" },
+    { label: "Projetos", href: "/projects" },
   ];
 
   const session = localStorage.getItem("session");
