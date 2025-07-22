@@ -39,15 +39,6 @@ export const Home = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-              MARMO
-            </h1>
-            <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
-              Mar Moçambique
-            </p>
-      </section>
-
       <section
         className="overflow-hidden max-w-[100%] mx-auto h-[600px] relative mt-1.5 mb-1.5"
         ref={emblaRef}
@@ -84,6 +75,15 @@ export const Home = () => {
             Ver Mais
           </Button>
         </Link>
+      </section>
+
+      <section className="">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+              MARMO
+            </h1>
+            <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
+              Mar Moçambique
+            </p>
       </section>
 
       <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 py-10 px-6 text-center">
