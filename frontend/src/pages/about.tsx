@@ -30,44 +30,44 @@ export const About = () => {
 	return (
 		<section className="flex flex-col bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
 			<section className="text-center py-10 px-6">
-            	<h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+				<h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
 					QUEM SOMOS
-            	</h1>
-      		</section>
+				</h1>
+			</section>
 
 			<img
-		            src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg"
-		            alt="Marmo Pic"
-		            className="h-[400px] object-cover mb-2 shadow-md w-full"
-         		 />
+				src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117060/IMG_20231201_151858_HDR_plbufy.jpg"
+				alt="Marmo Pic"
+				className="h-[400px] object-cover mb-2 shadow-md w-full"
+			/>
 
 			<p className="max-w-4xl m-auto text-base md:text-lg text-center mb-10 p-4 text-black dark:text-gray-300">
 				A Associação Mar Mocambique{" "},
 				<strong className="font-bold text-green-600">MARMO</strong>, é uma pessoa coletiva de direito privado, sem
-fins lucrativos, dotada de personalidade jurídica, autonomia administrativa, financeira e
-patrimonial com a sede na cidade de Quelimane, na província da Zambézia e delegações em
-todo o país.
+				fins lucrativos, dotada de personalidade jurídica, autonomia administrativa, financeira e
+				patrimonial com a sede na cidade de Quelimane, na província da Zambézia e delegações em
+				todo o país.
 			</p>
 
 			<section className="bg-green-100 dark:bg-gray-900 py-10 px-6 text-center">
-        		<motion.div
-          			initial={{ opacity: 0, y: 50 }}
-          			whileInView={{ opacity: 1, y: 0 }}
-          			transition={{ duration: 0.6 }}
-          			viewport={{ once: true }}
-          			className="max-w-4xl mx-auto"
-        		>	
-          			<h2 className="text-3xl font-bold text-green-600 mb-6">Nossos Objectivos</h2>
-          			<p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-            			A <strong className="text-green-600">MARMO</strong> foi criado com objectivo primordial
-de promover a manutenção da diversidade
-biológica, considerada em termos genéticos
-pacíficos e ecossistemáticos, do mar
-moçambicano.
-          			</p>
-          
-        		</motion.div>
-      		</section>
+				<motion.div
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					viewport={{ once: true }}
+					className="max-w-4xl mx-auto"
+				>
+					<h2 className="text-3xl font-bold text-green-600 mb-6">Nossos Objectivos</h2>
+					<p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
+						A <strong className="text-green-600">MARMO</strong> foi criado com objectivo primordial
+						de promover a manutenção da diversidade
+						biológica, considerada em termos genéticos
+						pacíficos e ecossistemáticos, do mar
+						moçambicano.
+					</p>
+
+				</motion.div>
+			</section>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8 mb-8 p-6 w-full ">
 				{aboutItems.map((item, idx) => (
@@ -87,7 +87,7 @@ moçambicano.
 				))}
 			</div>
 
-			
+
 
 			<section className="bg-blue-950 text-white w-full py-13 px-6 text-center">
 				<motion.div

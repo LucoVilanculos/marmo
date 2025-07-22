@@ -43,7 +43,7 @@ export const ContactPage = () => {
       </section>
 
       <img
-		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg"
+		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117029/IMG_20231201_164320_HDR_jxyxlt.jpg"
 		    alt="Marmo Pic"
 		    className="h-[400px] object-cover mb-2 shadow-md w-full"
       />

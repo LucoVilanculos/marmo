@@ -8,6 +8,7 @@ import { ContactPage } from "./contact";
 import { Gallery } from "./gallery";
 import { AdminPage } from "./admin";
 import { ErrorPage } from "./errorpage";
+import {Volunteer} from "./volunteer";
 
 export {
     Home,
@@ -15,6 +16,7 @@ export {
     LoginPage,
     ContactPage,
     Gallery,
+    Volunteer,
     AdminPage,
     ErrorPage,
     Partners,

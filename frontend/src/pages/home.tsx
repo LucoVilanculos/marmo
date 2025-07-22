@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import  useEmblaCarousel  from "embla-carousel-react";
+import useEmblaCarousel from "embla-carousel-react";
 
 import { motion } from "framer-motion";
 import {
@@ -24,9 +24,9 @@ const areasDeActuacao = [
 ];
 
 const area = [
- "Celebrar termos de parcerias com instituições, empresas, organizacoes não governamental, associacoes, universidades públicas ou privadas, nacionais ou estrangeiras, sobre assuntos ligados aos seus objectivos, interesses e competências" ,
- "Subvencionar, total ou parcialmente, projectos de desenvolvimento, geração de rendimento de pesquisa individual ou de equipas, podendo explorar comercialmente produtos resultantes dessas actividades, mediante contrato ou acordo específico" ,
- "Apoiar a comunidade a desenvolver projectos de sustentabilidade ecologica, inovação tecnológica, desenvolvimento comunitário e de geração de rendimento." ,
+  "Celebrar termos de parcerias com instituições, empresas, organizacoes não governamental, associacoes, universidades públicas ou privadas, nacionais ou estrangeiras, sobre assuntos ligados aos seus objectivos, interesses e competências",
+  "Subvencionar, total ou parcialmente, projectos de desenvolvimento, geração de rendimento de pesquisa individual ou de equipas, podendo explorar comercialmente produtos resultantes dessas actividades, mediante contrato ou acordo específico",
+  "Apoiar a comunidade a desenvolver projectos de sustentabilidade ecologica, inovação tecnológica, desenvolvimento comunitário e de geração de rendimento.",
 ];
 
 
@@ -46,7 +46,7 @@ const fetchFaqs = async () => [
 ];
 
 export const Home = () => {
-   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   useEmblaAutoPlay(emblaApi, 15000);
   const [faqs, setFaqs] = useState<{ question: string; answer: string }[]>([]);
 
@@ -62,15 +62,15 @@ export const Home = () => {
       >
         <div className="flex transition-transform duration-1000 ease-in-out">
           {[
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137295/splash-marmo_sqffbp.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137279/marmo-acoes_unpt2b.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/living-ocean_e8ty5e.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137278/mangal-marmo_jscknk.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753117029/IMG_20231201_164320_HDR_jxyxlt.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753117026/IMG_20231201_181407_HDR_ewezir.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753117021/IMG_20231201_180743_ydxfzo.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753117021/IMG_20231201_180743_ydxfzo.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753116900/WhatsApp_Image_2024-09-18_at_16.25.57_1_mwhh0k.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753116705/Untitled_jq35jl.tiff",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753116701/IMG-20211210-WA02430_wnmxqy.tiff",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753116483/Imagem9_f4tcgr.jpg",
+            "https://res.cloudinary.com/dtopurogz/image/upload/v1753116693/IMG-20211204-WA01370_gq6t8o.tiff",
           ].map((img, index) => (
             <div
               key={index}
@@ -94,13 +94,13 @@ export const Home = () => {
         </Link>
       </section>
 
-      <section className="">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-              MARMO
-            </h1>
-            <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
-              Mar Moçambique
-            </p>
+      <section className="ml-5 mr-5 mb-5">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+          MARMO
+        </h1>
+        <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
+          Mar Moçambique
+        </p>
       </section>
 
       <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 py-10 px-6 text-center">
@@ -113,31 +113,31 @@ export const Home = () => {
         >
           <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da Marmo</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-        Ser um centro catalisador para o desenvolvimento e a difusão de
-soluções inovadoras para o uso sustentável da zona costeira e do
-mar moçambicano servindo como exemplo em conservação da
-natureza para a sociedade e para os sectores públicos e privados.
+            Ser um centro catalisador para o desenvolvimento e a difusão de
+            soluções inovadoras para o uso sustentável da zona costeira e do
+            mar moçambicano servindo como exemplo em conservação da
+            natureza para a sociedade e para os sectores públicos e privados.
           </p>
-         
+
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-            Para a consecução de seus objectivos/responsabilidades sociais, a <strong className="font-bold text-green-600">MARMO </strong> 
- poderá
+            Para a consecução de seus objectivos/responsabilidades sociais, a <strong className="font-bold text-green-600">MARMO </strong>
+            poderá
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8">
-            {area.map((area, i) => (
-              <motion.div
-                key={area}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-100 dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
-              >
-                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
-              </motion.div>
-            ))}
-          </div>
+          {area.map((area, i) => (
+            <motion.div
+              key={area}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-slate-100 dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
+            >
+              <h3 className="text-lg font-normal text-blue-950 dark:text-blue-300 mb-2">{area}</h3>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       <section className="bg-green-100 dark:bg-gray-900 py-10 px-6 text-center">
@@ -149,22 +149,22 @@ natureza para a sociedade e para os sectores públicos e privados.
           className="max-w-4xl mx-auto"
         >
           <img
-            src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg"
+            src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117029/IMG_20231201_164320_HDR_jxyxlt.jpg"
             alt="Marmo Pic"
             className="h-[400px] object-cover shadow-md w-full"
           />
           <h2 className="text-3xl font-bold text-green-600 mb-6">Nossa Missão</h2>
-           <ul className="text-lg text-gray-800 dark:text-green-100 leading-relaxed space-y-4 text-center list-disc pl-6">
-          <li>
-            <span className="font-semibold text-green-700 dark:text-green-300">Proteção e conservação:</span> Contribuir para a proteção, preservação, conservação, recuperação e manejo sustentável do ambiente costeiro, do património paisagístico e dos bens e valores culturais da costa moçambicana.
-          </li>
-          <li>
-            <span className="font-semibold text-green-700 dark:text-green-300">Ações sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros buscando a substituição de práticas impactantes por actividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade
-          </li>
+          <ul className="text-lg text-gray-800 dark:text-green-100 leading-relaxed space-y-4 text-center list-disc pl-6">
+            <li>
+              <span className="font-semibold text-green-700 dark:text-green-300">Proteção e conservação:</span> Contribuir para a proteção, preservação, conservação, recuperação e manejo sustentável do ambiente costeiro, do património paisagístico e dos bens e valores culturais da costa moçambicana.
+            </li>
+            <li>
+              <span className="font-semibold text-green-700 dark:text-green-300">Ações sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros buscando a substituição de práticas impactantes por actividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade
+            </li>
           </ul>
           <Link to={"/volunteer"}>
             <Button variant="ghost" className="mt-4 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold transition-transform hover:scale-105">
-                Quer ser voluntário?
+              Quer ser voluntário?
             </Button>
           </Link>
         </motion.div>
@@ -237,7 +237,7 @@ natureza para a sociedade e para os sectores públicos e privados.
           </p>
           <Link to={"/donate"}>
             <Button
-            className="bg-green-600 hover:bg-green-500 transition px-6 py-3 rounded text-white font-semibold"
+              className="bg-green-600 hover:bg-green-500 transition px-6 py-3 rounded text-white font-semibold"
             >
               Apoiar a Causa
             </Button>

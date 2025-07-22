@@ -2,8 +2,7 @@ import { createBrowserRouter, RouterProvider, Navigate, useLocation } from "reac
 
 
 
-import { About, Home, AdminPage, ErrorPage, LoginPage, Donate, Volunteer, Gallery, ContactPage, Team, Partners, Projects, } from "./pages";
-import { About, Home, AdminPage, ErrorPage, LoginPage, Gallery, ContactPage, } from "./pages";
+import { About, Home, AdminPage, ErrorPage, LoginPage, Volunteer, Gallery, ContactPage, Team, Partners, Projects, } from "./pages";
 
 
 import { MainLayout } from "./layout/main-layout";
@@ -53,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/gallery",
         element: <Gallery />,
+      },
+      {
+        path: "/volunteer",
+        element: <Volunteer />,
       },
       {
         path: "/team",
