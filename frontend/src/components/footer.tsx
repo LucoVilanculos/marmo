@@ -57,7 +57,7 @@ export const Footer = () => {
           <ul className="space-y-1 flex gap-4">
             <li>
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/MARMO-Mar-Mo%C3%A7ambique-102577895481431"
                 className="hover:text-blue-400 transition"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -67,7 +67,7 @@ export const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/mar_mocambique/"
                 className="hover:text-pink-400 transition"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,7 +77,7 @@ export const Footer = () => {
             </li>
             <li>
               <a
-                href="https://linkedin.com"
+                href="https://www.LinkedIn/in/mar_mocambique-9483b921b"
                 className="hover:text-blue-600 transition"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -87,7 +87,7 @@ export const Footer = () => {
             </li>
             <li>
               <a
-                href="https://x.com"
+                href="https://www.twitter.com/Mar_Mocambique?s=20"
                 className="hover:text-indigo-900 transition"
                 target="_blank"
                 rel="noopener noreferrer"
