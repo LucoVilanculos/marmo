@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider, Navigate, useLocation } from "reac
 
 
 
-import { About, Home, AdminPage, ErrorPage, LoginPage, Donate, Volunteer, Gallery, ContactPage, } from "./pages";
+import { About, Home, AdminPage, ErrorPage, LoginPage, Volunteer, Gallery, ContactPage, Team, Partners, Projects, Donate } from "./pages";
 
 
 import { MainLayout } from "./layout/main-layout";
@@ -36,10 +36,7 @@ const router = createBrowserRouter([
         path: "/meu-login",
         element: <LoginPage />,
       },
-      {
-        path: "/donate",
-        element: <Donate />,
-      },
+      
     {
       path: "/meu-painel-secreto-luco",
       element: (
@@ -49,10 +46,6 @@ const router = createBrowserRouter([
       ),
     },
       {
-        path: "/volunteer",
-        element: <Volunteer />,
-      },
-      {
         path: "/contact",
         element: <ContactPage />,
       },
@@ -60,6 +53,26 @@ const router = createBrowserRouter([
         path: "/gallery",
         element: <Gallery />,
       },
+      {
+        path: "/volunteer",
+        element: <Volunteer />,
+      },
+      {
+        path: "/team",
+        element: <Team/>,
+      },
+      {
+        path: "/partners",
+        element: <Partners />,
+      },
+      {
+        path: "/projects",
+        element: <Projects />,
+      },
+      {
+        path: "/donate",
+        element: <Donate />,
+      }
     ],
   },
 ]);

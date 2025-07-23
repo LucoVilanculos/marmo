@@ -36,17 +36,19 @@ export const ContactPage = () => {
 
   return (
     <div className="flex flex-col items-center bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
-      <section className="text-center py-7 px-6">
+      
+      <img
+		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117029/IMG_20231201_164320_HDR_jxyxlt.jpg"
+		    alt="Marmo Pic"
+		    className="h-[400px] object-cover mb-2 shadow-md w-full"
+      />
+
+      <section className="ml-10 mt-6 mb-6">
         <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
           FALE CONOSCO
         </h1>
       </section>
 
-      <img
-		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/live_ad6irp.jpg"
-		    alt="Marmo Pic"
-		    className="h-[400px] object-cover mb-2 shadow-md w-full"
-      />
       
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
