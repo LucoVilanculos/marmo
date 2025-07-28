@@ -50,10 +50,14 @@ const outrosOrgaos = [
 export const Team = () => {
 	return (
 		<section className="flex flex-col items-center bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans min-h-screen">
-			<section className="text-center py-10 px-6">
+			
+			<section className="ml-10 mt-6 mb-6">
 				<h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
 					ESTRUTURA DA EQUIPA MARMO
 				</h1>
+			</section>
+
+			<section className="text-center py-10 px-6">
 				<p className="text-lg md:text-xl text-blue-700 dark:text-green-300 tracking-wider font-bold mt-2">
 					Conheça a hierarquia e os integrantes que lideram a MARMO na proteção do
 					mar moçambicano

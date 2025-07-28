@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import  useEmblaCarousel  from "embla-carousel-react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { motion } from "framer-motion";
 import {
@@ -23,9 +24,9 @@ const areasDeActuacao = [
             ];
 
 const area = [
- "Celebrar termos de parcerias com instituições, empresas, organizacoes não governamental, associacoes, universidades públicas ou privadas, nacionais ou estrangeiras, sobre assuntos ligados aos seus objectivos, interesses e competências" ,
- "Subvencionar, total ou parcialmente, projectos de desenvolvimento, geração de rendimento de pesquisa individual ou de equipas, podendo explorar comercialmente produtos resultantes dessas actividades, mediante contrato ou acordo específico" ,
- "Apoiar a comunidade a desenvolver projectos de sustentabilidade ecologica, inovação tecnológica, desenvolvimento comunitário e de geração de rendimento." ,
+  "Celebrar termos de parcerias com instituições, empresas, organizacoes não governamental, associacoes, universidades públicas ou privadas, nacionais ou estrangeiras, sobre assuntos ligados aos seus objectivos, interesses e competências",
+  "Subvencionar, total ou parcialmente, projectos de desenvolvimento, geração de rendimento de pesquisa individual ou de equipas, podendo explorar comercialmente produtos resultantes dessas actividades, mediante contrato ou acordo específico",
+  "Apoiar a comunidade a desenvolver projectos de sustentabilidade ecologica, inovação tecnológica, desenvolvimento comunitário e de geração de rendimento.",
 ];
 
 
@@ -45,8 +46,8 @@ const fetchFaqs = async () => [
 ];
 
 export const Home = () => {
-   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  useEmblaAutoPlay(emblaApi, 15000);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  useEmblaAutoPlay(emblaApi, 300000);
   const [faqs, setFaqs] = useState<{ question: string; answer: string }[]>([]);
 
   useEffect(() => {
@@ -55,15 +56,6 @@ export const Home = () => {
 
   return (
     <>
-      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-              MARMO
-            </h1>
-            <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
-              Mar Moçambique
-            </p>
-      </section>
-
       <section
         className="overflow-hidden max-w-[100%] mx-auto h-[600px] relative mt-1.5 mb-1.5"
         ref={emblaRef}
@@ -73,9 +65,7 @@ export const Home = () => {
             "https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
             "https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
             "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137279/marmo-acoes_unpt2b.jpg",
             "https://res.cloudinary.com/dybll7vsv/image/upload/v1753739800/Benedito_Issa_esperanca_do_oceano_otlleq.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137278/mangal-marmo_jscknk.jpg",
             "https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
           ].map((img, index) => (
             <div
@@ -90,15 +80,40 @@ export const Home = () => {
             </div>
           ))}
         </div>
+        <button
+          className="absolute left-4 top-1/2 z-40 -translate-y-1/2 bg-white/80 hover:bg-green-600 text-green-700 hover:text-white rounded-full p-2 shadow-lg transition"
+          onClick={() => emblaApi && emblaApi.scrollPrev()}
+          aria-label="Anterior"
+        >
+          <ArrowLeft className="w-6 h-6" />
+        </button>
+        <button
+          className="absolute right-4 top-1/2 z-40 -translate-y-1/2 bg-white/80 hover:bg-green-600 text-green-700 hover:text-white rounded-full p-2 shadow-lg transition"
+          onClick={() => emblaApi && emblaApi.scrollNext()}
+          aria-label="Próximo"
+        >
+          <ArrowRight className="w-6 h-6" />
+        </button>
         <Link to={"/gallery"}>
           <Button
             variant="ghost"
-            className="absolute bottom-8 right-8  bg-green-600 hover:bg-green-500  px-6 py-3 rounded text-white font-semibold shadow-2xl transition"
+            className="absolute bottom-8 right-8 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold shadow-2xl transition"
           >
             Ver Mais
           </Button>
         </Link>
       </section>
+
+      <section className="ml-10 mt-6 mb-6 text-center">
+          <h1 className="text-5xl md:text-7xl font-black text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
+            MARMO
+          </h1>
+          <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
+            Mar Moçambique
+          </p>
+      </section>
+
+
 
       <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 py-10 px-6 text-center">
         <motion.div
@@ -110,18 +125,18 @@ export const Home = () => {
         >
           <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da MARMO</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-        Ser um centro catalisador para o desenvolvimento e a difusão de
-soluções inovadoras para o uso sustentável da zona costeira e do
-mar moçambicano servindo como exemplo em conservação da
-natureza para a sociedade e para os sectores públicos e privados.
+            Ser um centro catalisador para o desenvolvimento e a difusão de
+            soluções inovadoras para o uso sustentável da zona costeira e do
+            mar moçambicano servindo como exemplo em conservação da
+            natureza para a sociedade e para os sectores públicos e privados.
           </p>
-         
+
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-            Para a consecução de seus objectivos/responsabilidades sociais, a <strong className="font-bold text-green-600">MARMO </strong> 
- poderá
+            Para a consecução de seus objectivos/responsabilidades sociais, a <strong className="font-bold text-green-600">MARMO </strong>
+            poderá
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8 ">
             {area.map((area, i) => (
               <motion.div
                 key={area}
@@ -129,7 +144,7 @@ natureza para a sociedade e para os sectores públicos e privados.
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-100 dark:bg-gray-900 rounded-lg p-6 shadow-sm transition-transform hover:scale-105 border-l-4 border-green-500"
+                className="bg-slate-100 mt-4  dark:bg-gray-900 border-l-4 border-green-500 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
               >
                 <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
               </motion.div>
@@ -137,31 +152,26 @@ natureza para a sociedade e para os sectores públicos e privados.
           </div>
       </section>
 
-      <section className="bg-green-100 dark:bg-gray-900 py-10 px-6 text-center">
+      <section className="bg-green-100 dark:bg-gray-900 py-10 px-0 text-center p-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="w-full p-4"
         >
-          <img
-            src="https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg"
-            alt="Marmo Pic"
-            className="h-[400px] object-cover shadow-md w-full"
-          />
           <h2 className="text-3xl font-bold text-green-600 mb-6">Nossa Missão</h2>
-           <ul className="text-lg text-gray-800 dark:text-green-100 leading-relaxed space-y-4 text-center list-disc pl-6">
-          <li>
-            <span className="font-semibold text-green-700 dark:text-green-300">Proteção e conservação:</span> Contribuir para a proteção, preservação, conservação, recuperação e manejo sustentável do ambiente costeiro, do património paisagístico e dos bens e valores culturais da costa moçambicana.
-          </li>
-          <li>
-            <span className="font-semibold text-green-700 dark:text-green-300">Ações sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros buscando a substituição de práticas impactantes por actividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade
-          </li>
+          <ul className="text-lg text-gray-800 dark:text-green-100 leading-relaxed space-y-4 text-center list-none pl-6">
+            <li>
+              <span className="font-semibold text-green-700 dark:text-green-300">Proteção e conservação:</span> Contribuir para a proteção, preservação, conservação, recuperação e manejo sustentável do ambiente costeiro, do património paisagístico e dos bens e valores culturais da costa moçambicana.
+            </li>
+            <li>
+              <span className="font-semibold text-green-700 dark:text-green-300">Acções sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros buscando a substituição de práticas impactantes por actividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade
+            </li>
           </ul>
           <Link to={"/volunteer"}>
             <Button variant="ghost" className="mt-4 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold transition-transform hover:scale-105">
-                Quer ser voluntário?
+              Quer ser voluntário?
             </Button>
           </Link>
         </motion.div>
@@ -191,7 +201,7 @@ natureza para a sociedade e para os sectores públicos e privados.
         <h2 className="text-3xl font-bold text-green-600 text-center mb-10">
           Perguntas Frequentes
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl-grid-cols-5 gap-8 ">
           {faqs.map((faq, idx) => (
             <motion.div
               key={idx}
@@ -231,7 +241,7 @@ natureza para a sociedade e para os sectores públicos e privados.
           </p>
           <Link to={"/donate"}>
             <Button
-            className="bg-green-600 hover:bg-green-500 transition px-6 py-3 rounded text-white font-semibold"
+              className="bg-green-600 hover:bg-green-500 transition px-6 py-3 rounded text-white font-semibold"
             >
               Apoiar a Causa
             </Button>
