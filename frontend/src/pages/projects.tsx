@@ -56,7 +56,7 @@ export const Projects = () => {
           <button
             key={project.title}
             onClick={() => openCard(project)}
-            className="bg-white dark:bg-[#1a263b] border border-blue-100 shadow-2xl rounded-2xl flex flex-col items-center p-8 min-h-fit transition-transform hover:scale-105 focus:outline-none"
+            className="bg-white dark:bg-[#1a263b] border-l-4 border-green-500 shadow-2xl rounded-2xl flex flex-col items-center p-8 min-h-fit transition-transform hover:scale-105 focus:outline-none"
             style={{ cursor: "pointer" }}
           >
             <img
@@ -70,7 +70,7 @@ export const Projects = () => {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-md bg-white dark:bg-[#151d29]">
+        <DialogContent className="max-w-md bg-white border border-green-500 dark:bg-[#151d29]">
           {selectedProject && (
             <>
               <DialogHeader>

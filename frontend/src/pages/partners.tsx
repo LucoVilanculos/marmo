@@ -36,7 +36,7 @@ export const Partners = () => {
         {partners.map((partner) => (
           <div
             key={partner.name}
-            className="flex flex-col items-center bg-white dark:bg-[#1a263b] border border-blue-100 shadow-xl rounded-2xl p-8 transition-transform hover:scale-105 min-h-[260px]"
+            className="flex flex-col items-center bg-white  border border-green-500 dark:bg-[#1a263b] shadow-xl rounded-2xl p-8 transition-transform hover:scale-105 min-h-[260px]"
           >
             <img
               src={partner.logo}
