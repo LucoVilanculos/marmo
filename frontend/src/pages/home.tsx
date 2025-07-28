@@ -13,15 +13,14 @@ import { Button } from "../components/ui/button";
 import { useEmblaAutoPlay } from "../context/autoplay";
 
 const areasDeActuacao = [
-  {
-    title: "Apoio Comunitário",
-    description: "actuamos emprol da melhoria de vida, uso de sustentável dos recursos naturais e encarra como fonte de referência para novos desafios, promovendo a inovação contínua",
-  },
-  {
-    title: "Tecnologia & Inovação",
-    description: "Somos conduzidos em total conformidade com a legislação ambiental, com a busca da melhoria dos processos e com a aplicação de tecnologias adequadas e ecologicamente aceites",
-  },
-];
+              "Conservação Marinha",
+              "Educação Ambiental",
+              "Turismo Sustentável",
+              "Pesquisa Científica",
+              "Apoio Comunitário",
+              "Tecnologia & Inovação",
+              "Aquacultura sustentável"
+            ];
 
 const area = [
  "Celebrar termos de parcerias com instituições, empresas, organizacoes não governamental, associacoes, universidades públicas ou privadas, nacionais ou estrangeiras, sobre assuntos ligados aos seus objectivos, interesses e competências" ,
@@ -109,9 +108,9 @@ export const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto "
         >
-          <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da Marmo</h2>
+          <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da MARMO</h2>
           <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
         Ser um centro catalisador para o desenvolvimento e a difusão de
 soluções inovadoras para o uso sustentável da zona costeira e do
@@ -124,7 +123,7 @@ natureza para a sociedade e para os sectores públicos e privados.
  poderá
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8 mt-4">
             {area.map((area, i) => (
               <motion.div
                 key={area}
@@ -132,7 +131,7 @@ natureza para a sociedade e para os sectores públicos e privados.
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-100 dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
+                className="bg-slate-100 dark:bg-gray-900 rounded-lg p-6 shadow-sm transition-transform hover:scale-105 border-l-4 border-green-500"
               >
                 <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
               </motion.div>
@@ -170,23 +169,20 @@ natureza para a sociedade e para os sectores públicos e privados.
         </motion.div>
       </section>
 
-      <section className="bg-white dark:bg-gray-600 py-10 px-6">
+      <section className="bg-gradient-to-r from-blue-100 to-blue-300  dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-900 dark:text-green-600 text-center mb-12">Nossas Áreas de Atuação</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl-grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
             {areasDeActuacao.map((areasDeActuacao, i) => (
               <motion.div
-                key={areasDeActuacao.title}
+                key={areasDeActuacao}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
+                className="bg-white dark:bg-gray-900 border-l-4 border-green-500 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
               >
-                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{areasDeActuacao.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  {areasDeActuacao.description}
-                </p>
+                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{areasDeActuacao}</h3>
               </motion.div>
             ))}
           </div>
@@ -206,7 +202,7 @@ natureza para a sociedade e para os sectores públicos e privados.
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white dark:bg-gray-900 border border-gray-200 rounded-lg shadow-sm transition-transform hover:scale-105">
+              <Card className="bg-white dark:bg-gray-900 border border-green-500 rounded-lg shadow-sm transition-transform hover:scale-105">
                 <CardHeader>
                   <CardTitle className="text-blue-900 dark:text-blue-300 text-lg">
                     {faq.question}
