@@ -11,15 +11,16 @@ import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import { sendVolunteerForm } from "../services/volunteer";
 
 const schema = z.object({
-  nome: z.string().min(2, "Nome obrigatório"),
-  apelido: z.string().min(2, "Apelido obrigatório"),
+  name: z.string().min(2, "Nome obrigatório"),
+  surname: z.string().min(2, "Apelido obrigatório"),
   email: z.string().email("Email inválido"),
-  telefone: z
+  phone: z
     .string()
     .regex(/^(8[234567])\d{7}$/, "Número deve começar com 82/83/84/85/86/87 e ter 9 dígitos"),
-  sexo: z.enum(["masculino", "feminino", "outros", "prefiro não dizer"], {
+  gender: z.enum(["masculino", "feminino", "outros", "prefiro não dizer"], {
     required_error: "Selecione o sexo",
   }),
 });
@@ -35,9 +36,16 @@ export const Volunteer = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data: FormData) => {
-    alert("Obrigado por se candidatar! ☺");
-    console.log({ ...data, telefone: "+258" + data.telefone });
+  const onSubmit = async (data: FormData) => {
+    try {
+      await sendVolunteerForm(data);
+      alert("Obrigado por se candidatar! ☺");
+    } catch (error: any) {
+      alert(
+        error?.response?.data?.message ||
+        "Erro ao enviar candidatura. Tente novamente."
+      );
+    }
   };
 
   return (
@@ -76,14 +84,14 @@ export const Volunteer = () => {
           <CardContent>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
               <div>
-                <Label htmlFor="nome">Nome</Label>
-                <Input id="nome" {...register("nome")} />
-                {errors.nome && <p className="text-red-500 text-sm">{errors.nome.message}</p>}
+                <Label htmlFor="name">Nome</Label>
+                <Input id="name" {...register("name")} />
+                {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
               </div>
               <div>
-                <Label htmlFor="apelido">Apelido</Label>
-                <Input id="apelido" {...register("apelido")} />
-                {errors.apelido && <p className="text-red-500 text-sm">{errors.apelido.message}</p>}
+                <Label htmlFor="surname">Apelido</Label>
+                <Input id="surname" {...register("surname")} />
+                {errors.surname && <p className="text-red-500 text-sm">{errors.surname.message}</p>}
               </div>
               <div>
                 <Label htmlFor="email">Email</Label>
@@ -91,22 +99,22 @@ export const Volunteer = () => {
                 {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
               </div>
               <div>
-                <Label htmlFor="telefone">Número de Telefone</Label>
+                <Label htmlFor="phone">Número de Telefone</Label>
                 <div className="flex gap-2">
                   <span className="px-3 py-2 bg-blue-100 dark:bg-blue-900 text-sm rounded-l-md text-gray-600 dark:text-white">+258</span>
                   <Input
-                    id="telefone"
-                    {...register("telefone")}
+                    id="phone"
+                    {...register("phone")}
                     placeholder="84xxxxxxx"
                     className="flex-1 rounded-l-none"
                   />
                 </div>
-                {errors.telefone && <p className="text-red-500 text-sm">{errors.telefone.message}</p>}
+                {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
               </div>
               <div>
-                <Label htmlFor="sexo">Sexo</Label>
-                <Select {...register("sexo") as any}>
-                  <SelectTrigger id="sexo">
+                <Label htmlFor="gender">Sexo</Label>
+                <Select {...register("gender") as any}>
+                  <SelectTrigger id="gender">
                     <SelectValue placeholder="Selecione" />
                   </SelectTrigger>
                   <SelectContent>
@@ -116,7 +124,7 @@ export const Volunteer = () => {
                     <SelectItem value="prefiro-nao-dizer">Prefiro não dizer</SelectItem>
                   </SelectContent>
                 </Select>
-                {errors.sexo && <p className="text-red-500 text-sm">{errors.sexo.message}</p>}
+                {errors.gender && <p className="text-red-500 text-sm">{errors.gender.message}</p>}
               </div>
               <Button
                 type="submit"
