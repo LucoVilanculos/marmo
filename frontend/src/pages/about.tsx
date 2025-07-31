@@ -175,7 +175,7 @@ export const About = () => {
 						<div className="text-gray-400 text-center">Nenhuma FAQ respondida ainda.</div>
 					)}
 					{faqs
-						.filter(faq => faq.answer) // Só mostra FAQs respondidas
+						.filter(faq => faq.answer) 
 						.map(faq => (
 							<motion.div
 								key={faq._id}
