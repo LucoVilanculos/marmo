@@ -12,6 +12,7 @@ import {
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { motion } from "framer-motion";
+import { sendContactForm } from "../services/form";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Nome é obrigatório"),
@@ -29,9 +30,16 @@ export const ContactPage = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = (data: any) => {
-    alert("Mensagem enviada com sucesso!");
-    console.log(data);
+  const onSubmit = async (data: any) => {
+    try {
+      await sendContactForm(data);
+      alert("Mensagem enviada com sucesso!");
+    } catch (error: any) {
+      alert(
+        error?.response?.data?.message ||
+        "Erro ao enviar mensagem. Tente novamente."
+      );
+    }
   };
 
   return (

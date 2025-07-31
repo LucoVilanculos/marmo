@@ -75,7 +75,7 @@ export const Team = () => {
 						viewport={{ once: true }}
 						className="flex flex-col items-center h-full"
 					>
-						<Card className="bg-white dark:bg-[#1a263b] border border-green-300 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[220px] min-h-[240px] h-full">
+						<Card className="bg-white dark:bg-[#1a263b] border border-green-500 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[220px] min-h-[240px] h-full">
 							<img
 								src={conselhoDirecao[0].img}
 								alt={conselhoDirecao[0].name}
@@ -100,7 +100,7 @@ export const Team = () => {
 						viewport={{ once: true }}
 						className="flex flex-col items-center h-full"
 					>
-						<Card className="bg-white dark:bg-[#1a263b] border border-green-300 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[220px] min-h-[240px] h-full">
+						<Card className="bg-white dark:bg-[#1a263b] border border-green-500 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[220px] min-h-[240px] h-full">
 							<img
 								src={conselhoDirecao[1].img}
 								alt={conselhoDirecao[1].name}
@@ -129,7 +129,7 @@ export const Team = () => {
 							viewport={{ once: true }}
 							className="flex flex-col items-center"
 						>
-							<Card className="bg-white dark:bg-[#1a263b] border border-blue-100 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[180px] min-h-[240px] h-full">
+							<Card className="bg-white dark:bg-[#1a263b] border border-green-500 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[180px] min-h-[240px] h-full">
 								<img
 									src={member.img}
 									alt={member.name}
@@ -160,7 +160,7 @@ export const Team = () => {
 							viewport={{ once: true }}
 							className="flex flex-col items-center"
 						>
-							<Card className="bg-white dark:bg-[#1a263b] border border-blue-100 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[180px] min-h-[240px] h-full">
+							<Card className="bg-white dark:bg-[#1a263b] border border-green-500 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[180px] min-h-[240px] h-full">
 								<img
 									src={member.img}
 									alt={member.name}
