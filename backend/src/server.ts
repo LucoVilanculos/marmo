@@ -14,7 +14,11 @@ import { VolunteerRouter } from "./routes/volunteer.route";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["https://marmocambique.vercel.app"], 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 const host = process.env.HOST || "http://localhost";
 const port = process.env.PORT || 3002;
