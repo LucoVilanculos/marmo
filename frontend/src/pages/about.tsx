@@ -99,7 +99,7 @@ export const About = () => {
 			{/* Hero Section */}
 			<div className="relative w-full h-[400px] mb-2">
 				<img
-					src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117060/IMG_20231201_151858_HDR_plbufy.jpg"
+					src="https://res.cloudinary.com/dtopurogz/image/upload/v1756219064/Imagem2_a4hk0e.jpg"
 					alt="Marmo Pic"
 					className="absolute inset-0 w-full h-full object-cover"
 				/>
