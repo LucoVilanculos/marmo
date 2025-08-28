@@ -4,16 +4,23 @@ import { Card, CardContent } from "../components/ui/card";
 import { motion } from "framer-motion";
 
 const imagesByProvince = {
- "Cultivo e plantio de Mudas de Mangal": [
+  "Cultivo e plantio de Mudas de Mangal": [
     "https://res.cloudinary.com/dtopurogz/image/upload/v1753118274/IMG_20231218_101153_ut8ba5.jpg",
-    "https://res.cloudinary.com/dtophttps://res.cloudinary.com/dtopurogz/image/upload/v1756219035/IMG_20231221_084514_dhnron.jpgurogz/image/upload/v1753117026/IMG_20231201_181407_HDR_ewezir.jpg",
-    "https://reshttps://res.cloudinary.com/dtopurogz/image/upload/v1756219026/IMG_20231218_101217_ucnnyj.jpg.cloudinary.com/dtopurogz/image/upload/v1753117021/IMG_20231201_180743_ydxfzo.jpg",
-    "https://res.cloudinary.com/dtopurogz/image/upload/v1753117https://res.cloudinary.com/dtopurogz/image/upload/v1756219074/Benedito_Issa_esperanca_do_oceano_ysuioq.jpg021/IMG_20231201_180743_ydxfzo.jpg",
-    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116900/WhatsApp_Image_2024-09-18https://res.cloudinary.com/dtopurogz/image/upload/v1756219079/Imagem10_wbdyvb.jpg_at_16.25.57_1_mwhh0k.jpg",
-    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116705/Untitled_jq35jlhttps://res.cloudinary.com/dtopurogz/image/upload/v1756219066/Imagem11_daznzr.jpg.tiff",
-    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116701/IMG-20211210-WA02430_wnmhttps://res.cloudinary.com/dtopurogz/image/upload/v1756219064/Imagem2_a4hk0e.jpgxqy.tiff",
-    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116700/IMG-20211210-WA02360_ae8sfy.https://res.cloudinary.com/dtopurogz/image/upload/v1756219058/Imagem3_hejkzk.jpgtiff",
-    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116693/IMG-20211204-WAhttps://res.cloudinary.com/dtopurogz/image/upload/v1756219062/Imagem9_dmm8px.jpg01370_gq6t8o.tiff",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1756219035/IMG_20231221_084514_dhnron.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1753117026/IMG_20231201_181407_HDR_ewezir.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1756219026/IMG_20231218_101217_ucnnyj.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1753117021/IMG_20231201_180743_ydxfzo.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1756219074/Benedito_Issa_esperanca_do_oceano_ysuioq.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1756219079/Imagem10_wbdyvb.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116900/WhatsApp_Image_2024-09-18_at_16.25.57_1_mwhh0k.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116705/Untitled_jq35jl.tiff",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1756219066/Imagem11_daznzr.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116701/IMG-20211210-WA02430_wnmxqy.tiff",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1756219064/Imagem2_a4hk0e.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116700/IMG-20211210-WA02360_ae8sfy.tiff",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1756219058/Imagem3_hejkzk.jpg",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1753116693/IMG-20211204-WA01370_gq6t8o.tiff",
+    "https://res.cloudinary.com/dtopurogz/image/upload/v1756219062/Imagem9_dmm8px.jpg",
   ],
 
   'Monitoramento de espécies em vias de extinção e controle das áreas de proteção parcial': [
@@ -129,13 +136,13 @@ export const Gallery = () => {
       </section>
 
       <Tabs defaultValue={selectedProvince} className="max-w-6xl mx-auto">
-        <TabsList className="flex flex-wrap h-fit justify-center gap-2 mb-10">
+        <TabsList className="flex h-fit gap-2 mb-10 overflow-x-auto scrollbar-hide px-2 w-full flex-nowrap sm:flex-wrap justify-start sm:justify-center">
           {Object.keys(imagesByProvince).map((province) => (
             <TabsTrigger
               key={province}
               value={province}
               onClick={() => setSelectedProvince(province)}
-              className="text-green-600 font-semibold"
+              className="text-green-600 font-semibold whitespace-nowrap"
             >
               {province}
             </TabsTrigger>

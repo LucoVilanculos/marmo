@@ -210,24 +210,16 @@ export const Projects = () => {
     setOpen(true);
   };
 
+  const closeModal = () => {
+    setOpen(false);
+    setSelectedProject(null);
+  };
+
   return (
     <main
       className="font-sans bg-gradient-to-b from-blue-50 via-green-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen"
       style={{ fontFamily: 'Poppins, sans-serif' }}
     >
-      {/* Botão de doar fixo no topo */}
-      <div className="w-full flex justify-end px-6 pt-6">
-        <Button
-          className="bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg transition active:scale-95"
-          asChild
-        >
-          <a href="/donate">
-            <HeartHandshake className="w-5 h-5" />
-            Doar
-          </a>
-        </Button>
-      </div>
-
       {/* Hero Section */}
       <div className="relative w-full h-[400px] mb-2">
         <img
@@ -271,54 +263,52 @@ export const Projects = () => {
         </div>
       </section>
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent
-          className="max-w-2xl w-full bg-white border border-green-500 dark:bg-[#151d29] px-0 py-0"
-          style={{
-            maxHeight: "90vh",
-            display: "flex",
-            flexDirection: "column",
-            overflow: "hidden",
-            position: "relative",
-          }}
-        >
-          {/* Botão de fechar */}
-          <button
-            onClick={() => setOpen(false)}
-            className="absolute top-4 right-4 z-50 bg-green-600 hover:bg-green-700 text-white rounded-full p-2 shadow-lg transition active:scale-90"
-            aria-label="Fechar"
-            type="button"
+      {/* Modal só aparece se selectedProject existir */}
+      <Dialog open={open && !!selectedProject} onOpenChange={closeModal}>
+        {selectedProject && (
+          <DialogContent
+            className="max-w-2xl w-full bg-white border border-green-500 dark:bg-[#151d29] px-0 py-0"
+            style={{
+              maxHeight: "90vh",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
+              position: "relative",
+            }}
           >
-            <X className="w-5 h-5" />
-          </button>
-          {selectedProject && (
-            <>
-              <DialogHeader className="sticky top-0 z-10 bg-white dark:bg-[#151d29] px-6 pt-6 pb-2 border-b border-green-500">
-                <DialogTitle className="text-green-700 dark:text-green-300 text-2xl font-bold text-center">
-                  {selectedProject.title}
-                </DialogTitle>
-              </DialogHeader>
-              <div
-                className="overflow-y-auto px-6 pb-6 pt-2"
-                style={{ maxHeight: "calc(90vh - 70px)" }}
-              >
-                <img
-                  src={selectedProject.img}
-                  alt={selectedProject.title}
-                  className="w-full h-56 object-cover rounded-xl mb-6 shadow-lg"
-                  onError={e => { e.currentTarget.src = "https://ui-avatars.com/api/?name=Projeto&background=green&color=white"; }}
-                />
-                <div className="text-gray-800 dark:text-green-100 text-lg text-left">
-                  {selectedProject.description}
-                </div>
+            {/* Botão de fechar */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-50 bg-green-600 hover:bg-green-700 text-white rounded-full p-2 shadow-lg transition active:scale-90"
+              aria-label="Fechar"
+              type="button"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <DialogHeader className="sticky top-0 z-10 bg-white dark:bg-[#151d29] px-6 pt-6 pb-2 border-b border-green-500">
+              <DialogTitle className="text-green-700 dark:text-green-300 text-2xl font-bold text-center">
+                {selectedProject.title}
+              </DialogTitle>
+            </DialogHeader>
+            <div
+              className="overflow-y-auto px-6 pb-6 pt-2"
+              style={{ maxHeight: "calc(90vh - 70px)" }}
+            >
+              <img
+                src={selectedProject.img}
+                alt={selectedProject.title}
+                className="w-full h-56 object-cover rounded-xl mb-6 shadow-lg"
+                onError={e => { e.currentTarget.src = "https://ui-avatars.com/api/?name=Projeto&background=green&color=white"; }}
+              />
+              <div className="text-gray-800 dark:text-green-100 text-lg text-left">
+                {selectedProject.description}
               </div>
-            </>
-          )}
-        </DialogContent>
+            </div>
+          </DialogContent>
+        )}
       </Dialog>
 
       {/* Botão de doar no final da página */}
-      <div className="flex justify-center py-10">
         <Button
           className="bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg transition active:scale-95"
           asChild
@@ -328,7 +318,6 @@ export const Projects = () => {
             Doar
           </a>
         </Button>
-      </div>
     </main>
   );
 };

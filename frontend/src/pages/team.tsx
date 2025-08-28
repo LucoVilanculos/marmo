@@ -1,12 +1,14 @@
 import { Card, CardHeader, CardTitle } from "../components/ui/card";
 import { motion } from "framer-motion";
 
+const LOGO_MARMO = "https://res.cloudinary.com/dtopurogz/image/upload/v1752137280/marmo-logo_nq0efc.png";
+
 const estrutura = [
 	{
 		title: "Assembleia Geral",
 		children: [
-			{ name: "Ervino Litesure", role: "Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219119/Ervinio_Litsure-photo_perfil_gb3mco.jpg" },
-			{ name: "Géssica Canivete", role: "Vice-Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219127/Gesica_Canivete_Photo_perfil_fgtxwd.jpg" },
+			{ name: "Ervino Litsure", role: "Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219119/Ervinio_Litsure-photo_perfil_gb3mco.jpg" },
+			{ name: "Gésica Canivete", role: "Vice-Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219127/Gesica_Canivete_Photo_perfil_fgtxwd.jpg" },
 			{ name: "Kelly Steffany", role: "Secretariado", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219112/Kelly_Stefany-photo_perfil_ixgwdm.jpg" },
 			{ name: "Lopes Nhampossa", role: "Secretariado", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219114/Lopes_Namposse_photo_perfil_na7r7m.jpg" },
 		],
@@ -106,13 +108,13 @@ export const Team = () => {
 									>
 										<img
 											src={
-												"img" in member && member.img
+												member.img
 													? member.img
-													: `https://ui-avatars.com/api/?name=${member.name}&background=green&color=white`
+													: LOGO_MARMO
 											}
 											alt={member.name}
-											className="w-20 h-20 rounded-full object-cover mb-2 border-4 border-green-500"
-											onError={e => { e.currentTarget.src = `https://ui-avatars.com/api/?name=${member.name}&background=green&color=white`; }}
+											className="w-20 h-20 rounded-full object-cover mb-2 border-4 border-green-500 bg-white"
+											onError={e => { e.currentTarget.src = LOGO_MARMO; }}
 										/>
 										<p className="text-blue-900 dark:text-blue-300 font-semibold">
 											{member.name}

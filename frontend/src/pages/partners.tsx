@@ -1,24 +1,26 @@
 import { motion } from "framer-motion";
 
+const LOGO_MARMO = "https://res.cloudinary.com/dtopurogz/image/upload/v1752137280/marmo-logo_nq0efc.png";
+
 const partners = [
 	{
 		name: "Parceiro 1",
-		logo: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219119/Ervinio_Litsure-photo_perfil_gb3mco.jpg",
+		logo: LOGO_MARMO,
 		url: "https://example.com",
 	},
 	{
 		name: "Parceiro 2",
-		logo: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219127/Gesica_Canivete_Photo_perfil_fgtxwd.jpg",
+		logo: LOGO_MARMO,
 		url: "https://example.com",
 	},
 	{
 		name: "Parceiro 3",
-		logo: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219112/Kelly_Stefany-photo_perfil_ixgwdm.jpg",
+		logo: LOGO_MARMO,
 		url: "https://example.com",
 	},
 	{
 		name: "Parceiro 4",
-		logo: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219114/Lopes_Namposse_photo_perfil_na7r7m.jpg",
+		logo: LOGO_MARMO,
 		url: "https://example.com",
 	},
 ];
@@ -60,13 +62,9 @@ export const Partners = () => {
 							className="flex flex-col items-center bg-white border border-green-500 dark:bg-[#1a263b] shadow-xl rounded-2xl p-8 transition-transform hover:scale-105 active:scale-95 min-h-[260px]"
 						>
 							<img
-								src={partner.logo}
-								alt={partner.name}
-								className="w-32 h-32 object-contain mb-4 rounded-xl bg-white border-2 border-green-500 shadow-md"
-								onError={(e) => {
-									e.currentTarget.src =
-										"https://ui-avatars.com/api/?name=Parceiro&background=green&color=white";
-								}}
+								src={LOGO_MARMO}
+								alt="Logo MARMO"
+								className="w-32 h-32 object-contain mb-4 rounded-xl bg-white border-2 border-green-500 shadow-md p-4"
 							/>
 							<h3 className="text-xl font-bold text-green-600 text-center mb-2">
 								{partner.name}

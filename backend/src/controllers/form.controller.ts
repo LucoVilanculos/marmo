@@ -15,7 +15,7 @@ export const createFormMessage = async (req: Request, res: Response) => {
       const message = await FormMessage.create({ name, email, subject, description });
 
       await resend.emails.send({
-        from: "Marmo <info@binario.co.mz",
+        from: "Marmo <info@binario.co.mz>",
         to: process.env.CONTACT_EMAIL || "luisisauravilanculos@gmail.com",
         subject: `[Contato MARMO] ${subject}`,
         html: `
