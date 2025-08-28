@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog";
+import { Button } from "../components/ui/button";
+import { HeartHandshake, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Projects = () => {
@@ -130,8 +132,6 @@ export const Projects = () => {
               <li>Criar e consolidar 5 Clubes Ambientais ativos em escolas primárias e secundárias.</li>
               <li>Capacitar pelo menos 50 professores em metodologias de educação ambiental e oceânica.</li>
               <li>Engajar mais de 350 crianças em atividades regulares de proteção ambiental e artística.</li>
-              <li>Organizar 10 campanhas comunitárias de sensibilização sobre gestão de resíduos e conservação marinha.</li>
-              <li>Produzir materiais educativos (guias, cartazes, jogos pedagógicos) adaptados ao contexto local.</li>
               <li>Realizar 2 feiras/exposições anuais para apresentar os resultados e boas práticas das escolas.</li>
             </ul>
           </div>
@@ -212,9 +212,22 @@ export const Projects = () => {
 
   return (
     <main
-      className="font-sans bg-gradient-to-b from-blue-100 to-green-100 dark:from-gray-900 dark:to-gray-800 min-h-screen"
+      className="font-sans bg-gradient-to-b from-blue-50 via-green-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen"
       style={{ fontFamily: 'Poppins, sans-serif' }}
     >
+      {/* Botão de doar fixo no topo */}
+      <div className="w-full flex justify-end px-6 pt-6">
+        <Button
+          className="bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg transition active:scale-95"
+          asChild
+        >
+          <a href="/donate">
+            <HeartHandshake className="w-5 h-5" />
+            Doar
+          </a>
+        </Button>
+      </div>
+
       {/* Hero Section */}
       <div className="relative w-full h-[400px] mb-2">
         <img
@@ -222,16 +235,16 @@ export const Projects = () => {
           alt="Projetos MARMO"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-blue-900/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-200/80 via-green-200/60 to-gray-100/40" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-6xl md:text-7xl font-black text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-green-700 drop-shadow-lg tracking-wider text-center">
             PROJECTOS MARMO
           </h1>
         </div>
       </div>
 
       <section className="flex flex-col items-center py-10">
-        <p className="text-lg md:text-xl text-blue-700 dark:text-green-300 font-bold mb-10 text-center max-w-2xl">
+        <p className="text-lg md:text-xl text-green-700 dark:text-green-300 font-bold mb-10 text-center max-w-2xl">
           Conheça os principais projectos que promovem a conservação e educação ambiental no mar moçambicano.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl w-full px-6">
@@ -252,7 +265,7 @@ export const Projects = () => {
                 className="w-full h-64 object-cover rounded-xl mb-6 shadow-lg"
                 onError={e => { e.currentTarget.src = "https://ui-avatars.com/api/?name=Projeto&background=green&color=white"; }}
               />
-              <h2 className="text-green-600 text-2xl font-bold mb-4 text-center">{project.title}</h2>
+              <h2 className="text-green-700 text-2xl font-bold mb-4 text-center">{project.title}</h2>
             </motion.button>
           ))}
         </div>
@@ -266,8 +279,18 @@ export const Projects = () => {
             display: "flex",
             flexDirection: "column",
             overflow: "hidden",
+            position: "relative",
           }}
         >
+          {/* Botão de fechar */}
+          <button
+            onClick={() => setOpen(false)}
+            className="absolute top-4 right-4 z-50 bg-green-600 hover:bg-green-700 text-white rounded-full p-2 shadow-lg transition active:scale-90"
+            aria-label="Fechar"
+            type="button"
+          >
+            <X className="w-5 h-5" />
+          </button>
           {selectedProject && (
             <>
               <DialogHeader className="sticky top-0 z-10 bg-white dark:bg-[#151d29] px-6 pt-6 pb-2 border-b border-green-500">
@@ -293,6 +316,19 @@ export const Projects = () => {
           )}
         </DialogContent>
       </Dialog>
+
+      {/* Botão de doar no final da página */}
+      <div className="flex justify-center py-10">
+        <Button
+          className="bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg transition active:scale-95"
+          asChild
+        >
+          <a href="/donate">
+            <HeartHandshake className="w-5 h-5" />
+            Doar
+          </a>
+        </Button>
+      </div>
     </main>
   );
 };

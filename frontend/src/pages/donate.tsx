@@ -22,7 +22,7 @@ export const Donate = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="w-full md:w-1/2 flex flex-col justify-center p-8"
         >
-          <h1 className="text-6xl md:text-7xl font-black text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider text-center mb-2">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-blue-900 dark:text-blue-100 text-center mb-2">
             QUER APOIAR A MARMO?
           </h1>
           <p className="text-base text-center text-gray-700 dark:text-blue-100 mb-6">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { getFaqs, createFaq } from "../services/faqs";
+import { HeartHandshake } from "lucide-react";
 
 const aboutItems = [
 	{
@@ -105,7 +106,7 @@ export const About = () => {
 				/>
 				<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-blue-900/30 to-transparent" />
 				<div className="absolute inset-0 flex items-center justify-center">
-					<h1 className="text-6xl md:text-7xl font-black text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider text-center">
+					<h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wider text-center">
 						QUEM SOMOS
 					</h1>
 				</div>
@@ -229,8 +230,14 @@ export const About = () => {
 						Sua ajuda pode transformar comunidades costeiras e conservar
 						ecossistemas marinhos únicos.
 					</p>
-					<Button className="bg-green-600 hover:bg-green-500 transition px-8 py-4 rounded text-white font-bold text-lg shadow-lg">
-						Quero ser voluntário!
+					<Button
+						className="bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg transition active:scale-95"
+						asChild
+					>
+						<a href="/donate">
+							<HeartHandshake className="w-5 h-5" />
+							Doar
+						</a>
 					</Button>
 				</motion.div>
 			</section>
