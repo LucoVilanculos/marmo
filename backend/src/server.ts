@@ -14,7 +14,7 @@ import { VolunteerRouter } from "./routes/volunteer.route";
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3001" }));
+app.use(cors());
 
 const host = process.env.HOST || "http://localhost";
 const port = process.env.PORT || 3002;
