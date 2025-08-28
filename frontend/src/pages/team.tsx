@@ -1,183 +1,131 @@
 import { Card, CardHeader, CardTitle } from "../components/ui/card";
 import { motion } from "framer-motion";
 
-const conselhoDirecao = [
+const estrutura = [
 	{
-		name: "Nome do Director",
-		role: "Director Executivo",
-		img: "foto do director",
+		title: "Assembleia Geral",
+		children: [
+			{ name: "Ervino Litesure", role: "Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219119/Ervinio_Litsure-photo_perfil_gb3mco.jpg" },
+			{ name: "Géssica Canivete", role: "Vice-Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219127/Gesica_Canivete_Photo_perfil_fgtxwd.jpg" },
+			{ name: "Kelly Steffany", role: "Secretariado", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219112/Kelly_Stefany-photo_perfil_ixgwdm.jpg" },
+			{ name: "Lopes Nhampossa", role: "Secretariado", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219114/Lopes_Namposse_photo_perfil_na7r7m.jpg" },
+		],
 	},
 	{
-		name: "Nome do Vice-Director",
-		role: "Vice-Director",
-		img: "Foto do Vice-Director", 
+		title: "Conselho de Administração",
+		children: [
+			{ name: "Estevão Mazuze", role: "Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219122/Estevao_Photo_Perfil_jzysxq.jpg" },
+		],
 	},
 	{
-		name: "Nome 1",
-		role: "Vogal",
-		img: "foto do vogal 1", 
+		title: "Conselho Diretivo",
+		children: [
+			{ name: "Benedito Issa", role: "Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219116/Benedito_ISSA-Fotografia_xzjf1u.jpg" },
+			{ name: "Ivaldo Fumo", role: "Vice-Presidente" },
+			{ name: "Inácio Mariano", role: "Vogal" },
+			{ name: "Kátia Mônica", role: "Vogal" },
+			{ name: "Leandro Here", role: "Vogal" },
+		],
 	},
 	{
-		name: "Nome 2",
-		role: "Vogal",
-		img: "foto do vogal 2",
+		title: "Conselho Fiscal",
+		children: [
+			{ name: "Arcenia Chivale", role: "Presidente" },
+			{ name: "Joel Salvador", role: "Vice-Presidente" },
+			{ name: "Zequito Manhice", role: "Tesoureiro" },
+		],
 	},
 	{
-		name: "Nome 3",
-		role: "Vogal",
-		img: "foto do vogal 3",
-	},
-];
-
-const outrosOrgaos = [
-	{
-		name: "Orgão 1",
-		role: "Secretário",
-		img: "foto do secretário",
-	},
-	{
-		name: "Orgão 2",
-		role: "Tesoureiro",
-		img: "foto do tesoureiro",
+		title: "Coordenadores Provinciais",
+		children: [
+			{ name: "Sofia Amade", role: "Coordenadora" },
+			{ name: "Elídio Comê", role: "Coordenador" },
+			{ name: "Channice Thembe", role: "Coordenadora" },
+			{ name: "Edson Bomes", role: "Coordenador" },
+			{ name: "Yuri Pfumo", role: "Coordenador" },
+			{ name: "Yula Rufino", role: "Coordenadora" },
+			{ name: "Amôs António", role: "Coordenador" },
+			{ name: "Regina", role: "Coordenadora" },
+		],
 	},
 	{
-		name: "Orgão 3",
-		role: "Secretário Adjunto",
-		img: "foto do secretário adjunto",
+		title: "Voluntariados",
+		children: [
+			{ name: "Vários Voluntários", role: "Diversas Funções" },
+		],
 	},
 ];
 
 export const Team = () => {
 	return (
-		<section className="flex flex-col items-center bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans min-h-screen">
-			
-			<section className="ml-10 mt-6 mb-6">
-				<h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-					ESTRUTURA DA EQUIPA MARMO
-				</h1>
-			</section>
+		<main
+			className="font-sans bg-gradient-to-b from-blue-100 to-green-100 dark:from-gray-900 dark:to-gray-800 min-h-screen"
+			style={{ fontFamily: 'Poppins, sans-serif' }}
+		>
+			<div className="relative w-full h-[400px] mb-2">
+				<img
+					src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117060/IMG_20231201_151858_HDR_plbufy.jpg"
+					alt="Equipe MARMO"
+					className="absolute inset-0 w-full h-full object-cover"
+				/>
+				<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-blue-900/30 to-transparent" />
+				<div className="absolute inset-0 flex items-center justify-center">
+					<h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wider text-center">
+						ESTRUTURA DA EQUIPA MARMO
+					</h1>
+				</div>
+			</div>
 
 			<section className="text-center py-10 px-6">
 				<p className="text-lg md:text-xl text-blue-700 dark:text-green-300 tracking-wider font-bold mt-2">
-					Conheça a hierarquia e os integrantes que lideram a MARMO na proteção do
-					mar moçambicano
+					Conheça a hierarquia e os integrantes que lideram a MARMO na proteção do mar moçambicano
 				</p>
 			</section>
 
-			
-			<div className="flex flex-col items-center w-full max-w-5xl px-2 mb-12">
-			
-				<div className="flex flex-row justify-center items-stretch w-full gap-6 mb-8">
+			<div className="flex flex-col items-center w-full max-w-5xl px-2 mb-12 gap-10">
+				{estrutura.map((orgao, idx) => (
 					<motion.div
-						initial={{ opacity: 0, y: -30 }}
+						key={orgao.title}
+						initial={{ opacity: 0, y: 30 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5 }}
+						transition={{ duration: 0.5, delay: idx * 0.1 }}
 						viewport={{ once: true }}
-						className="flex flex-col items-center h-full"
+						className="w-full"
 					>
-						<Card className="bg-white dark:bg-[#1a263b] border border-green-500 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[220px] min-h-[240px] h-full">
-							<img
-								src={conselhoDirecao[0].img}
-								alt={conselhoDirecao[0].name}
-								className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-green-500"
-							/>
-							<CardHeader className="text-center w-full">
-								<CardTitle className="text-green-600 text-xl font-bold">
-									{conselhoDirecao[0].name}
+						<Card className="bg-white dark:bg-[#1a263b] border-l-4 border-green-500 shadow-xl rounded-2xl p-6 mb-4">
+							<CardHeader>
+								<CardTitle className="text-green-600 text-2xl font-bold mb-2">
+									{orgao.title}
 								</CardTitle>
-								<p className="text-blue-900 dark:text-blue-300 font-semibold">
-									{conselhoDirecao[0].role}
-								</p>
 							</CardHeader>
+							<div className="flex flex-wrap gap-6">
+								{orgao.children.map((member) => (
+									<div
+										key={member.name}
+										className="flex flex-col items-center text-center transition-transform hover:scale-105 active:scale-95"
+									>
+										<img
+											src={
+												"img" in member && member.img
+													? member.img
+													: `https://ui-avatars.com/api/?name=${member.name}&background=green&color=white`
+											}
+											alt={member.name}
+											className="w-20 h-20 rounded-full object-cover mb-2 border-4 border-green-500"
+											onError={e => { e.currentTarget.src = `https://ui-avatars.com/api/?name=${member.name}&background=green&color=white`; }}
+										/>
+										<p className="text-blue-900 dark:text-blue-300 font-semibold">
+											{member.name}
+										</p>
+										<p className="text-gray-700 dark:text-gray-300 text-sm">
+											{member.role}
+										</p>
+									</div>
+								))}
+							</div>
 						</Card>
 					</motion.div>
-
-	
-					<motion.div
-						initial={{ opacity: 0, y: -20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, delay: 0.1 }}
-						viewport={{ once: true }}
-						className="flex flex-col items-center h-full"
-					>
-						<Card className="bg-white dark:bg-[#1a263b] border border-green-500 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[220px] min-h-[240px] h-full">
-							<img
-								src={conselhoDirecao[1].img}
-								alt={conselhoDirecao[1].name}
-								className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-green-500"
-							/>
-							<CardHeader className="text-center w-full">
-								<CardTitle className="text-green-600 text-xl font-bold">
-									{conselhoDirecao[1].name}
-								</CardTitle>
-								<p className="text-blue-900 dark:text-blue-300 font-semibold">
-									{conselhoDirecao[1].role}
-								</p>
-							</CardHeader>
-						</Card>
-					</motion.div>
-				</div>
-
-			
-				<div className="flex flex-row justify-center items-stretch w-full mb-8 gap-6">
-					{conselhoDirecao.slice(2).map((member, idx) => (
-						<motion.div
-							key={member.name}
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-							viewport={{ once: true }}
-							className="flex flex-col items-center"
-						>
-							<Card className="bg-white dark:bg-[#1a263b] border border-green-500 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[180px] min-h-[240px] h-full">
-								<img
-									src={member.img}
-									alt={member.name}
-									className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-green-500"
-								/>
-								<CardHeader className="text-center w-full">
-									<CardTitle className="text-green-600 text-lg font-bold">
-										{member.name}
-									</CardTitle>
-									<p className="text-blue-900 dark:text-blue-300 font-semibold">
-										{member.role}
-									</p>
-								</CardHeader>
-							</Card>
-						</motion.div>
-					))}
-				</div>
-
-				
-			
-				<div className="flex flex-row justify-center items-stretch w-full mt-8 gap-6">
-					{outrosOrgaos.map((member, idx) => (
-						<motion.div
-							key={member.name}
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
-							viewport={{ once: true }}
-							className="flex flex-col items-center"
-						>
-							<Card className="bg-white dark:bg-[#1a263b] border border-green-500 shadow-xl rounded-xl flex flex-col items-center p-6 min-w-[180px] min-h-[240px] h-full">
-								<img
-									src={member.img}
-									alt={member.name}
-									className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-green-500"
-								/>
-								<CardHeader className="text-center w-full">
-									<CardTitle className="text-green-600 text-lg font-bold">
-										{member.name}
-									</CardTitle>
-									<p className="text-blue-900 dark:text-blue-300 font-semibold">
-										{member.role}
-									</p>
-								</CardHeader>
-							</Card>
-						</motion.div>
-					))}
-				</div>
+				))}
 			</div>
 
 			<section className="max-w-3xl mx-auto text-center mb-10 px-4">
@@ -193,6 +141,6 @@ export const Team = () => {
 					costeiras.
 				</p>
 			</section>
-		</section>
+		</main>
 	);
 };

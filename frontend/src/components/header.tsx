@@ -6,6 +6,7 @@ import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "./ui/button";
 import { useDarkMode } from "../context/darkmode";
 
+
 export function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const navigate = useNavigate();
@@ -19,14 +20,14 @@ export function Header() {
   });
 
   const linksLeft = [
-    { label: "Início", href: "/"},
-    { label: "Sobre", href: "/about"},
-    { label: "Projectos", href: "/projects"},
-    { label: "Equipe", href: "/team"},
-    { label: "Voluntariado", href: "/volunteer"},
-    { label: "Parceiros", href: "/partners"},
-    { label: "Galeria", href: "/gallery"},
-    { label: "Contacto", href: "/contact"},
+    { label: "Início", href: "/" },
+    { label: "Sobre", href: "/about" },
+    { label: "Projectos", href: "/projects" },
+    { label: "Equipe", href: "/team" },
+    { label: "Voluntariado", href: "/volunteer" },
+    { label: "Parceiros", href: "/partners" },
+    { label: "Galeria", href: "/gallery" },
+    { label: "Contacto", href: "/contact" },
   ];
 
   const session = localStorage.getItem("session");
@@ -39,35 +40,35 @@ export function Header() {
     navigate("/login");
   }
 
-
   return (
     <header
-      className={`w-full border-b transition-all duration-300 ${
+      className={`w-full border-b transition-all duration-300 font-sans ${
         scrolled
           ? "bg-white dark:bg-gray-900/80 shadow-md backdrop-blur-sm"
           : "bg-white dark:bg-gray-900"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 md:py-6 md:px-6">
-        <div className="flex items-center">
-          <NavLink to="/" className="flex items-start font-bold text-green-600 mr-5 justify-start">
-            <img
-              src="https://res.cloudinary.com/dtopurogz/image/upload/v1753116471/01_MARMO_LOGOTIPO_PNG.png_xnnek0.png"
-              alt="MARMO logo"
-              className="w-10 h-10 mr-5 rounded-2xl md:w-10 md:h-10"
-            />
-          </NavLink>
-        </div>
+        <NavLink to="/" className="flex items-center font-bold text-green-600 mr-5">
+          <img
+            src="https://res.cloudinary.com/dtopurogz/image/upload/v1753116471/01_MARMO_LOGOTIPO_PNG.png_xnnek0.png"
+            alt="MARMO logo"
+            className="w-12 h-12 rounded-2xl md:w-14 md:h-14 shadow-lg"
+          />
+          <span className="ml-2 text-xl md:text-2xl tracking-wide font-extrabold">MARMO</span>
+        </NavLink>
 
-        <nav className="gap-8 text-sm flex-1 hidden md:flex justify-end">
+        <nav className="gap-8 text-base hidden md:flex ml-auto">
           {linksLeft.map((link) => (
             <NavLink
               key={link.label}
               to={link.href}
               className={({ isActive }) =>
-                `transition font-medium tracking-wide hover:text-green-700 ${
-                  isActive ? "text-green-600" : "text-gray-700 dark:text-gray-300"
-                }`
+                `relative px-2 py-1 font-semibold tracking-wide transition-colors duration-200
+                hover:text-green-700
+                ${isActive ? "text-green-600" : "text-gray-700 dark:text-gray-300"}
+                after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5
+                after:bg-green-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left`
               }
             >
               {link.label}
@@ -75,27 +76,27 @@ export function Header() {
           ))}
         </nav>
 
-        <nav className="items-center text-sm flex-1 justify-end hidden md:flex">
+        <div className="items-center text-base hidden md:flex gap-2 ml-6">
           {isLogged && (
             <Button
               onClick={handleLogout}
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded font-bold transition ml-2"
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded font-bold shadow transition"
             >
               Sair
             </Button>
           )}
-
           <Button
             variant="ghost"
             size="icon"
             aria-label="Alternar dark mode"
             onClick={toggle}
+            className="hover:bg-green-100 dark:hover:bg-green-900"
           >
             {dark ? <Sun size={22} /> : <Moon size={22} />}
           </Button>
-        </nav>
+        </div>
 
-        <div className="md:hidden flex items-center flex-1 justify-end gap-2">
+        <div className="md:hidden flex items-center gap-2 ml-auto">
           <Button
             onClick={() => setIsMobileOpen((v) => !v)}
             className="p-2"
@@ -107,6 +108,7 @@ export function Header() {
         </div>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
@@ -117,14 +119,14 @@ export function Header() {
             className="md:hidden fixed inset-0 z-40 bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-semibold px-6 py-6"
           >
             <div className="flex items-center justify-between mb-6">
-              <span className="uppercase items-center font-bold tracking-wider text-green-600 dark:text-indigo-300">
+              <span className="uppercase font-bold tracking-wider text-green-600 dark:text-indigo-300 text-2xl">
                 MARMO
               </span>
-              <Button 
-                onClick={() => 
-                setIsMobileOpen(false)}
-                variant={"ghost"} 
-                aria-label="Fechar menu">
+              <Button
+                onClick={() => setIsMobileOpen(false)}
+                variant={"ghost"}
+                aria-label="Fechar menu"
+              >
                 <X size={28} />
               </Button>
             </div>
@@ -155,7 +157,7 @@ export function Header() {
                 size="icon"
                 aria-label="Alternar dark mode"
                 onClick={toggle}
-                className="mt-4"
+                className="mt-4 hover:bg-green-100 dark:hover:bg-green-900"
               >
                 {dark ? <Sun size={22} /> : <Moon size={22} />}
               </Button>

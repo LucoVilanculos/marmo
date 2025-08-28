@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-
+import { ArrowLeft, ArrowRight, Info, Leaf, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -14,60 +12,84 @@ import { Button } from "../components/ui/button";
 import { useEmblaAutoPlay } from "../context/autoplay";
 
 const areasDeActuacao = [
-              "Conservação Marinha",
-              "Educação Ambiental",
-              "Turismo Sustentável",
-              "Pesquisa Científica",
-              "Apoio Comunitário",
-              "Tecnologia & Inovação",
-              "Aquacultura sustentável"
-            ];
-
-const area = [
-  "Celebrar termos de parcerias com instituições, empresas, organizacoes não governamental, associacoes, universidades públicas ou privadas, nacionais ou estrangeiras, sobre assuntos ligados aos seus objectivos, interesses e competências",
-  "Subvencionar, total ou parcialmente, projectos de desenvolvimento, geração de rendimento de pesquisa individual ou de equipas, podendo explorar comercialmente produtos resultantes dessas actividades, mediante contrato ou acordo específico",
-  "Apoiar a comunidade a desenvolver projectos de sustentabilidade ecologica, inovação tecnológica, desenvolvimento comunitário e de geração de rendimento.",
+  "Conservação Marinha",
+  "Educação Ambiental",
+  "Turismo Sustentável",
+  "Pesquisa Científica",
+  "Apoio Comunitário",
+  "Tecnologia & Inovação",
+  "Aquacultura sustentável"
 ];
 
+const area = [
+  "Celebrar termos de parcerias com instituições, empresas, organizações não governamentais, associações, universidades públicas ou privadas, nacionais ou estrangeiras, sobre assuntos ligados aos seus objetivos, interesses e competências.",
+  "Subvencionar, total ou parcialmente, projetos de desenvolvimento, geração de rendimento de pesquisa individual ou de equipes, podendo explorar comercialmente produtos resultantes dessas atividades, mediante contrato ou acordo específico.",
+  "Apoiar a comunidade a desenvolver projetos de sustentabilidade ecológica, inovação tecnológica, desenvolvimento comunitário e de geração de rendimento.",
+];
 
-const fetchFaqs = async () => [
+const bannerImages = [
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
+  "https://res.cloudinary.com/dybll7vsv/image/upload/v1753739800/Benedito_Issa_esperanca_do_oceano_otlleq.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218995/IMG-20250612-WA0073_idw4mh.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756219035/IMG_20231221_084514_dhnron.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218958/IMG_20231201_181407_HDR_fn3cam.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218939/IMG_20231201_164320_HDR_m1ohhi.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218892/IMG-20230927-WA0023_ltuzde.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756219066/Imagem11_daznzr.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756219062/Imagem9_dmm8px.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756219074/Benedito_Issa_esperanca_do_oceano_ysuioq.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218790/IMG-20211210-WA0205_iokdjh.jpg",
+];
+
+const faqs = [
   {
-    question: "Como faço para me registrar?",
-    answer: "Clique no botão Registrar e preencha o formulário com seus dados.",
+    question: "Por que conservar os mangais é importante?",
+    answer: "Mangais protegem a costa contra erosão, abrigam espécies marinhas e capturam carbono, ajudando no combate às mudanças climáticas.",
+    icon: <Leaf className="w-6 h-6 text-green-600 mr-2" />
   },
   {
-    question: "Como funciona o serviço?",
-    answer: "Você pode solicitar corridas, acompanhar motoristas e muito mais pelo nosso app.",
+    question: "Como posso ser voluntário na MARMO?",
+    answer: "Acesse a página de voluntariado, preencha o formulário e participe das nossas ações de campo e educação ambiental.",
+    icon: <Users className="w-6 h-6 text-blue-600 mr-2" />
   },
   {
-    question: "Quais cidades atendem?",
-    answer: "Atualmente, atendemos Maputo e região metropolitana.",
+    question: "Quais atividades posso participar como voluntário?",
+    answer: "Plantio de mangais, limpeza de praias, oficinas educativas, monitoramento de fauna e muito mais.",
+    icon: <Info className="w-6 h-6 text-green-600 mr-2" />
+  },
+  {
+    question: "A MARMO aceita doações?",
+    answer: "Sim! Você pode doar pela página de doações ou entrar em contato para apoiar nossos projetos.",
+    icon: <Leaf className="w-6 h-6 text-green-600 mr-2" />
+  },
+  {
+    question: "Preciso ter experiência para ajudar?",
+    answer: "Não! Qualquer pessoa pode contribuir, basta vontade de proteger o mar.",
+    icon: <Users className="w-6 h-6 text-blue-600 mr-2" />
+  },
+  {
+    question: "Onde a MARMO atua?",
+    answer: "Estamos presentes em várias regiões costeiras de Moçambique e expandindo para novas áreas.",
+    icon: <Info className="w-6 h-6 text-green-600 mr-2" />
   },
 ];
 
 export const Home = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   useEmblaAutoPlay(emblaApi, 300000);
-  const [faqs, setFaqs] = useState<{ question: string; answer: string }[]>([]);
-
-  useEffect(() => {
-    fetchFaqs().then(setFaqs);
-  }, []);
 
   return (
-    <>
+    <main className="font-sans bg-gradient-to-b from-blue-100 to-green-100 dark:from-gray-900 dark:to-gray-800" style={{ fontFamily: 'Poppins, sans-serif' }}>
+      {/* Banner */}
       <section
-        className="overflow-hidden max-w-[100%] mx-auto h-[600px] relative mt-1.5 mb-1.5"
+        className="overflow-hidden max-w-[100%] mx-auto h-[600px] relative mt-1.5 mb-1.5 rounded-3xl shadow-2xl"
         ref={emblaRef}
       >
         <div className="flex transition-transform duration-1000 ease-in-out">
-          {[
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
-            "https://res.cloudinary.com/dybll7vsv/image/upload/v1753739800/Benedito_Issa_esperanca_do_oceano_otlleq.jpg",
-            "https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
-          ].map((img, index) => (
+          {bannerImages.map((img, index) => (
             <div
               key={index}
               className="min-w-full flex justify-center items-center"
@@ -75,20 +97,22 @@ export const Home = () => {
               <img
                 src={img}
                 alt={`Banner ${index + 1}`}
-                className="h-[600px] object-cover shadow-md w-full"
+                className="h-[600px] object-cover shadow-md w-full rounded-3xl"
+                loading="lazy"
+                onError={e => { e.currentTarget.src = "https://ui-avatars.com/api/?name=MARMO&background=green&color=white"; }}
               />
             </div>
           ))}
         </div>
         <button
-          className="absolute left-4 top-1/2 z-40 -translate-y-1/2 bg-white/80 hover:bg-green-600 text-green-700 hover:text-white rounded-full p-2 shadow-lg transition"
+          className="absolute left-4 top-1/2 z-40 -translate-y-1/2 bg-white/80 hover:bg-green-600 text-green-700 hover:text-white rounded-full p-2 shadow-lg transition active:scale-90"
           onClick={() => emblaApi && emblaApi.scrollPrev()}
           aria-label="Anterior"
         >
           <ArrowLeft className="w-6 h-6" />
         </button>
         <button
-          className="absolute right-4 top-1/2 z-40 -translate-y-1/2 bg-white/80 hover:bg-green-600 text-green-700 hover:text-white rounded-full p-2 shadow-lg transition"
+          className="absolute right-4 top-1/2 z-40 -translate-y-1/2 bg-white/80 hover:bg-green-600 text-green-700 hover:text-white rounded-full p-2 shadow-lg transition active:scale-90"
           onClick={() => emblaApi && emblaApi.scrollNext()}
           aria-label="Próximo"
         >
@@ -97,111 +121,112 @@ export const Home = () => {
         <Link to={"/gallery"}>
           <Button
             variant="ghost"
-            className="absolute bottom-8 right-8 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold shadow-2xl transition"
+            className="absolute bottom-8 right-8 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold shadow-2xl transition active:scale-95"
           >
             Ver Mais
           </Button>
         </Link>
       </section>
 
-      <section className="ml-10 mt-6 mb-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-black text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-            MARMO
-          </h1>
-          <p className="text-lg md:text-xl text-blue-700 tracking-wider font-bold">
-            Mar Moçambique
-          </p>
+      {/* Hero */}
+      <section className="mt-10 mb-10 text-center">
+        <h1 className="text-6xl md:text-7xl font-black text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider mb-4">
+          MARMO
+        </h1>
+        <p className="text-2xl md:text-3xl text-blue-700 dark:text-green-300 tracking-wider font-bold mb-2">
+          Mar Moçambique
+        </p>
+        <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-700 dark:text-green-100 leading-relaxed font-medium">
+          Respirando o Oceano & Supirando Biodiversidade!
+        </p>
       </section>
 
-
-
-      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 py-10 px-6 text-center">
+      {/* Visão e Atuação */}
+      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 py-14 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto "
+          className="max-w-4xl mx-auto mb-10"
         >
-          <h2 className="text-3xl font-bold text-green-600 mb-6">Visão da MARMO</h2>
-          <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-            Ser um centro catalisador para o desenvolvimento e a difusão de
-            soluções inovadoras para o uso sustentável da zona costeira e do
-            mar moçambicano servindo como exemplo em conservação da
-            natureza para a sociedade e para os sectores públicos e privados.
+          <h2 className="text-4xl font-bold text-green-600 mb-6">Visão da MARMO</h2>
+          <p className="text-xl text-gray-800 dark:text-green-100 leading-relaxed mb-4">
+            Ser um centro catalisador para o desenvolvimento e a difusão de soluções inovadoras para o uso sustentável da zona costeira e do mar moçambicano, servindo como exemplo em conservação da natureza para a sociedade e para os sectores públicos e privados.
           </p>
-
-          <p className="text-lg text-gray-800 dark:text-green-100 leading-relaxed">
-            Para a consecução de seus objectivos/responsabilidades sociais, a <strong className="font-bold text-green-600">MARMO </strong>
-            poderá
+          <p className="text-xl text-gray-800 dark:text-green-100 leading-relaxed">
+            Para a consecução de seus objetivos sociais, a <strong className="font-bold text-green-600">MARMO</strong> poderá:
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl-grid-cols-3 gap-8 ">
-            {area.map((area, i) => (
-              <motion.div
-                key={area}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-100 mt-4  dark:bg-gray-900 border-l-4 border-green-500 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
-              >
-                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{area}</h3>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {area.map((item, i) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white dark:bg-gray-900 border-l-4 border-green-500 rounded-2xl p-8 shadow-md transition-transform hover:scale-105"
+            >
+              <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{item}</h3>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
-      <section className="bg-green-100 dark:bg-gray-900 py-10 px-0 text-center p-4">
+      {/* Missão */}
+      <section className="bg-green-100 dark:bg-gray-900 py-14 px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full p-4"
+          className="w-full max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-green-600 mb-6">Nossa Missão</h2>
-          <ul className="text-lg text-gray-800 dark:text-green-100 leading-relaxed space-y-4 text-center list-none pl-6">
+          <h2 className="text-4xl font-bold text-green-600 mb-6">Nossa Missão</h2>
+          <ul className="text-xl text-gray-800 dark:text-green-100 leading-relaxed space-y-6 text-center list-none pl-6">
             <li>
               <span className="font-semibold text-green-700 dark:text-green-300">Proteção e conservação:</span> Contribuir para a proteção, preservação, conservação, recuperação e manejo sustentável do ambiente costeiro, do património paisagístico e dos bens e valores culturais da costa moçambicana.
             </li>
             <li>
-              <span className="font-semibold text-green-700 dark:text-green-300">Acções sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros buscando a substituição de práticas impactantes por actividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade
+              <span className="font-semibold text-green-700 dark:text-green-300">Ações sustentáveis:</span> Promover ações voltadas aos ecossistemas marinhos e costeiros, buscando a substituição de práticas impactantes por atividades sustentáveis que visam a melhoria de vida das comunidades pesqueiras tradicionais e a manutenção e conservação da biodiversidade.
             </li>
           </ul>
           <Link to={"/volunteer"}>
-            <Button variant="ghost" className="mt-4 bg-green-600 hover:bg-green-500 px-6 py-3 rounded text-white font-semibold transition-transform hover:scale-105">
-              Quer ser voluntário?
+            <Button variant="ghost" className="mt-8 bg-green-600 hover:bg-green-500 px-8 py-4 rounded text-white font-bold text-lg shadow-lg transition-transform hover:scale-105 active:scale-95">
+              Quero ser voluntário!
             </Button>
           </Link>
         </motion.div>
       </section>
 
-      <section className="bg-gradient-to-r from-blue-100 to-blue-300  dark:from-gray-800 dark:to-gray-900 text-center py-10 px-6">
+      {/* Áreas de Atuação */}
+      <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 text-center py-14 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-blue-900 dark:text-green-600 text-center mb-12">Nossas Áreas de Atuação</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl-grid-cols-5 gap-8">
-            {areasDeActuacao.map((areasDeActuacao, i) => (
+          <h2 className="text-4xl font-bold text-blue-900 dark:text-green-600 text-center mb-12">Nossas Áreas de Atuação</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {areasDeActuacao.map((item, i) => (
               <motion.div
-                key={areasDeActuacao}
+                key={item}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-900 border-l-4 border-green-500 rounded-lg p-6 shadow-sm transition-transform hover:scale-105"
+                className="bg-white dark:bg-gray-900 border-l-4 border-green-500 rounded-2xl p-8 shadow-md transition-transform hover:scale-105"
               >
-                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{areasDeActuacao}</h3>
+                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">{item}</h3>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 py-10">
-        <h2 className="text-3xl font-bold text-green-600 text-center mb-10">
+      {/* FAQ */}
+      <section className="max-w-6xl mx-auto px-4 py-14">
+        <h2 className="text-4xl font-bold text-green-600 text-center mb-10">
           Perguntas Frequentes
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl-grid-cols-5 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {faqs.map((faq, idx) => (
             <motion.div
               key={idx}
@@ -210,14 +235,15 @@ export const Home = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white dark:bg-gray-900 border border-green-500 rounded-lg shadow-sm transition-transform hover:scale-105">
-                <CardHeader>
+              <Card className="bg-white dark:bg-gray-900 border border-green-500 rounded-2xl shadow-md transition-transform hover:scale-105">
+                <CardHeader className="flex items-center gap-2">
+                  {faq.icon}
                   <CardTitle className="text-blue-900 dark:text-blue-300 text-lg">
                     {faq.question}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600  dark:text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{faq.answer}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -225,7 +251,8 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="bg-blue-950 text-white py-16 px-6 text-center">
+      {/* CTA Final */}
+      <section className="bg-blue-950 text-white py-20 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -233,21 +260,21 @@ export const Home = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-2xl md:text-4xl dark:text-green-600 font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl dark:text-green-600 font-bold mb-6">
             Junte-se à MARMO na Proteção do Mar Moçambicano
           </h2>
-          <p className="text-lg dark:text-green-600 mb-6">
+          <p className="text-xl dark:text-green-600 mb-8">
             Sua ajuda pode transformar comunidades costeiras e conservar ecossistemas marinhos únicos.
           </p>
           <Link to={"/donate"}>
             <Button
-              className="bg-green-600 hover:bg-green-500 transition px-6 py-3 rounded text-white font-semibold"
+              className="bg-green-600 hover:bg-green-500 transition px-8 py-4 rounded text-white font-bold text-lg shadow-lg active:scale-95"
             >
               Apoiar a Causa
             </Button>
           </Link>
         </motion.div>
       </section>
-    </>
+    </main>
   );
 };

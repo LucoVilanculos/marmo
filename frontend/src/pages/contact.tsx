@@ -2,13 +2,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, PhoneCall, PhoneCallIcon, LocateIcon } from "lucide-react";
-
 import { Button } from "../components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-} from "../components/ui/card";
+import { Card, CardContent, CardFooter } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { motion } from "framer-motion";
@@ -43,33 +38,31 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 font-sans">
-      
-      <img
-		    src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117029/IMG_20231201_164320_HDR_jxyxlt.jpg"
-		    alt="Marmo Pic"
-		    className="h-[400px] object-cover mb-2 shadow-md w-full"
-      />
+    <main className="font-sans bg-gradient-to-b from-blue-100 to-green-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
+      <div className="relative w-full h-[400px] mb-2">
+        <img
+          src="https://res.cloudinary.com/dtopurogz/image/upload/v1753117029/IMG_20231201_164320_HDR_jxyxlt.jpg"
+          alt="Marmo Pic"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-blue-900/30 to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wider text-center">
+            FALE CONOSCO
+          </h1>
+        </div>
+      </div>
 
-      <section className="ml-10 mt-6 mb-6">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider">
-          FALE CONOSCO
-        </h1>
-      </section>
-
-      
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl p-4"
+        className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl mx-auto p-4"
       >
         <section className="flex-1 max-w-md text-blue-900 dark:text-white">
-
           <article className="text-base mt-4 text-gray-6 mb-5 dark:text-blue-100">
             A <span className="font-semibold text-green-600 dark:text-blue-900">MARMO</span> está sempre aberta ao diálogo. Se você tiver dúvidas, sugestões ou quiser apoiar nossa missão, envie-nos uma mensagem através do formulário. Nossa equipa responderá o mais breve possível.
           </article>
-
           <section className="bg-gradient-to-r from-blue-100 to-blue-300 dark:from-gray-800 dark:to-gray-900 backdrop-blur-md transition-transform hover:scale-105 rounded-2xl p-6 w-full max-w-xl shadow-2xl space-y-6 animate-fade-in">
             <div className="text-left space-y-3">
               <p className="flex"><span className="font-semibold text-blue-950 dark:text-green-600 flex mr-1"><Mail size={24}/> Email:</span> <a href="mailto:marmo@gmail.com" className="underline">marmo@gmail.com</a></p>
@@ -78,9 +71,7 @@ export const ContactPage = () => {
               <p className="flex"><span className="font-semibold text-blue-950 dark:text-green-600 flex mr-1"><LocateIcon size={24}/> Endereço:</span> Av. Mao Tse Tung</p>
             </div>
           </section>
-          
         </section>
-        
 
         <Card className="w-full max-w-md shadow-xl border border-blue-100 bg-white dark:bg-[#1a263b] dark:text-white transition-transform hover:scale-105">
           <CardContent>
@@ -147,6 +138,6 @@ export const ContactPage = () => {
           </CardContent>
         </Card>
       </motion.div>
-    </div>
+    </main>
   );
 };
