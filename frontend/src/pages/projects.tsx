@@ -150,7 +150,7 @@ export const Projects = () => {
           </p>
         </div>
       ),
-      img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756218978/IMG_20231201_180507_ukta9h.jpg",
+      img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756218736/IMG-20220913-WA0030_lxvwiy.jpg",
     },
     {
       title: "Aquatrat Project : “Aquacultura e conservação, proteção de espécies Marinhas”-2021-2026",
@@ -224,7 +224,7 @@ export const Projects = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-blue-900/30 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wider text-center">
+          <h1 className="text-6xl md:text-7xl font-black text-blue-600 dark:text-green-600 drop-shadow-md tracking-wider text-center">
             PROJECTOS MARMO
           </h1>
         </div>
