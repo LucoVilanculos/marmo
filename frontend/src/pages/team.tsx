@@ -1,7 +1,9 @@
+import { SocialLinks } from "../components/social-links";
 import { Card, CardHeader, CardTitle } from "../components/ui/card";
 import { motion } from "framer-motion";
 
 const LOGO_MARMO = "https://res.cloudinary.com/dtopurogz/image/upload/v1752137280/marmo-logo_nq0efc.png";
+
 
 const estrutura = [
 	{
@@ -44,10 +46,11 @@ const estrutura = [
 			{ name: "Elídio Comê", role: "Coordenador" },
 			{ name: "Channice Thembe", role: "Coordenadora" },
 			{ name: "Edson Bomes", role: "Coordenador" },
-			{ name: "Yuri Pfumo", role: "Coordenador" },
+			{ name: "Madalena Duarte", role: "Coordenadora" },
 			{ name: "Yula Rufino", role: "Coordenadora" },
-			{ name: "Amôs António", role: "Coordenador" },
+			{ name: "Borge Mbemzane", role: "Coordenador" },
 			{ name: "Regina", role: "Coordenadora" },
+			{ name: "Marta Laura", role:"Coordenadora" },
 		],
 	},
 	{
@@ -130,6 +133,7 @@ export const Team = () => {
 				))}
 			</div>
 
+
 			<section className="max-w-3xl mx-auto text-center mb-10 px-4">
 				<h2 className="text-2xl font-bold text-green-600 mb-4">
 					Nossa missão como equipa
@@ -143,6 +147,8 @@ export const Team = () => {
 					costeiras.
 				</p>
 			</section>
+
+			<SocialLinks />	
 		</main>
 	);
 };

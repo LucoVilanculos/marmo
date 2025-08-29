@@ -1,13 +1,17 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, PhoneCall, PhoneCallIcon, LocateIcon, HeartHandshake } from "lucide-react";
+import { HeartHandshake } from "lucide-react";
+import { Mail, PhoneCall, PhoneCallIcon, LocateIcon } from "lucide-react";
+import { motion } from "framer-motion";
+
+
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardFooter } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
-import { motion } from "framer-motion";
 import { sendContactForm } from "../services/form";
+import { SocialLinks } from "../components/social-links";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Nome é obrigatório"),
@@ -139,6 +143,7 @@ export const ContactPage = () => {
         </Card>
         
       </motion.div>
+
       <div className="flex justify-center mt-8">
         <Button
           className="bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full flex items-center gap-2 shadow-lg transition active:scale-95"
@@ -150,6 +155,9 @@ export const ContactPage = () => {
           </a>
         </Button>
       </div>
+
+      <SocialLinks />
+
     </main>
   );
 };

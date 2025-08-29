@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "../components/ui/button";
 import { getFaqs, createFaq } from "../services/faqs";
 import { HeartHandshake } from "lucide-react";
+
+import { SocialLinks } from "../components/social-links";
+import { Button } from "../components/ui/button";
+
 
 const aboutItems = [
 	{
 		title: "Unidades de Conservação",
-		desc: "Incentivar, criar e/ou manter unidades de conservação costeiras e marinhas, contribuindo para a proteção do patrimônio natural e da diversidade biológica.",
 	},
 	{
 		title: "Pesquisa e Inovação",
@@ -212,6 +214,7 @@ export const About = () => {
 							</motion.div>
 						))}
 				</div>
+				<SocialLinks />
 			</section>
 
 			{/* CTA Final */}

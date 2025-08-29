@@ -28,17 +28,16 @@ const area = [
 ];
 
 const bannerImages = [
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218848/WhatsApp_Image_2024-09-18_at_16.25.55_uk5ajb.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218820/IMG-20211204-WA0181_xnfnwx.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218827/IMG-20211204-WA01370_udbnid.tiff",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218741/IMG-20220917-WA0058_fjsart.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218812/Untitled_gj1djr.tiff",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218736/IMG-20220913-WA0030_lxvwiy.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218958/IMG_20231201_181407_HDR_fn3cam.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218958/IMG_20231201_151858_HDR_kqfn5h.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218997/IMG-20250612-WA0079_llqbhz.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218993/IMG-20250612-WA0081_g7ssng.jpg",
+
+  "https://res.cloudinary.com/dybll7vsv/image/upload/v1753739800/Benedito_Issa_esperanca_do_oceano_otlleq.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218995/IMG-20250612-WA0073_idw4mh.jpg",
   "https://res.cloudinary.com/dtopurogz/image/upload/v1756219035/IMG_20231221_084514_dhnron.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218958/IMG_20231201_181407_HDR_fn3cam.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218939/IMG_20231201_164320_HDR_m1ohhi.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218892/IMG-20230927-WA0023_ltuzde.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756219066/Imagem11_daznzr.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756219062/Imagem9_dmm8px.jpg",
+  "https://res.cloudinary.com/dtopurogz/image/upload/v1756218790/IMG-20211210-WA0205_iokdjh.jpg",
 ];
 
 const faqs = [
