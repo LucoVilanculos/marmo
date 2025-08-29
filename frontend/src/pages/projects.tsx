@@ -53,11 +53,6 @@ export const Projects = () => {
       img:"https://res.cloudinary.com/dtopurogz/image/upload/v1753118274/IMG_20231218_101153_ut8ba5.jpg",
     },
     {
-      title: "Programa de monitoramento de espécies em vias de extinção e controle das áreas de proteção parcial",
-      description: "Monitoramento de espécies ameaçadas e proteção de áreas marinhas críticas.",
-      img: "https://res.cloudinary.com/dybll7vsv/image/upload/v1753642268/IMG-20230926-WA0005_w2hfad.jpg",
-    },
-    {
       title: "Programa de descontaminação nos mangais",
       description: (
         <div className="space-y-4 text-left">
