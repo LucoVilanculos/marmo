@@ -1,12 +1,14 @@
 import { Card, CardHeader, CardTitle } from "../components/ui/card";
 import { motion } from "framer-motion";
 
+import { SocialLinks } from './../components/social-links';
+
 const estrutura = [
 	{
 		title: "Assembleia Geral",
 		children: [
-			{ name: "Ervino Litesure", role: "Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219119/Ervinio_Litsure-photo_perfil_gb3mco.jpg" },
-			{ name: "Géssica Canivete", role: "Vice-Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219127/Gesica_Canivete_Photo_perfil_fgtxwd.jpg" },
+			{ name: "Ervino Litsure", role: "Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219119/Ervinio_Litsure-photo_perfil_gb3mco.jpg" },
+			{ name: "Gésica Canivete", role: "Vice-Presidente", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219127/Gesica_Canivete_Photo_perfil_fgtxwd.jpg" },
 			{ name: "Kelly Steffany", role: "Secretariado", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219112/Kelly_Stefany-photo_perfil_ixgwdm.jpg" },
 			{ name: "Lopes Nhampossa", role: "Secretariado", img: "https://res.cloudinary.com/dtopurogz/image/upload/v1756219114/Lopes_Namposse_photo_perfil_na7r7m.jpg" },
 		],
@@ -42,10 +44,11 @@ const estrutura = [
 			{ name: "Elídio Comê", role: "Coordenador" },
 			{ name: "Channice Thembe", role: "Coordenadora" },
 			{ name: "Edson Bomes", role: "Coordenador" },
-			{ name: "Yuri Pfumo", role: "Coordenador" },
+			{ name: "Madalena Duarte", role: "Coordenadora" },
 			{ name: "Yula Rufino", role: "Coordenadora" },
-			{ name: "Amôs António", role: "Coordenador" },
+			{ name: "Borge Mbemzane", role: "Coordenador" },
 			{ name: "Regina", role: "Coordenadora" },
+			{ name: "Marta Laura", role:"Coordenadora" },
 		],
 	},
 	{
@@ -127,6 +130,8 @@ export const Team = () => {
 					</motion.div>
 				))}
 			</div>
+
+			<SocialLinks />
 
 			<section className="max-w-3xl mx-auto text-center mb-10 px-4">
 				<h2 className="text-2xl font-bold text-green-600 mb-4">

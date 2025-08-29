@@ -2,12 +2,15 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, PhoneCall, PhoneCallIcon, LocateIcon } from "lucide-react";
+import { motion } from "framer-motion";
+
+
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardFooter } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
-import { motion } from "framer-motion";
 import { sendContactForm } from "../services/form";
+import { SocialLinks } from "../components/social-links";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Nome é obrigatório"),
@@ -138,6 +141,7 @@ export const ContactPage = () => {
           </CardContent>
         </Card>
       </motion.div>
+      <SocialLinks />
     </main>
   );
 };

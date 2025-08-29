@@ -28,11 +28,7 @@ const area = [
 ];
 
 const bannerImages = [
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1752137314/ocean_v3rw5v.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1752137298/marmo-pic_a38zca.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1752137290/saving-ocean_xwufsu.jpg",
   "https://res.cloudinary.com/dybll7vsv/image/upload/v1753739800/Benedito_Issa_esperanca_do_oceano_otlleq.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1752137312/mar_neqgan.jpg",
   "https://res.cloudinary.com/dtopurogz/image/upload/v1756218995/IMG-20250612-WA0073_idw4mh.jpg",
   "https://res.cloudinary.com/dtopurogz/image/upload/v1756219035/IMG_20231221_084514_dhnron.jpg",
   "https://res.cloudinary.com/dtopurogz/image/upload/v1756218958/IMG_20231201_181407_HDR_fn3cam.jpg",
@@ -40,7 +36,6 @@ const bannerImages = [
   "https://res.cloudinary.com/dtopurogz/image/upload/v1756218892/IMG-20230927-WA0023_ltuzde.jpg",
   "https://res.cloudinary.com/dtopurogz/image/upload/v1756219066/Imagem11_daznzr.jpg",
   "https://res.cloudinary.com/dtopurogz/image/upload/v1756219062/Imagem9_dmm8px.jpg",
-  "https://res.cloudinary.com/dtopurogz/image/upload/v1756219074/Benedito_Issa_esperanca_do_oceano_ysuioq.jpg",
   "https://res.cloudinary.com/dtopurogz/image/upload/v1756218790/IMG-20211210-WA0205_iokdjh.jpg",
 ];
 

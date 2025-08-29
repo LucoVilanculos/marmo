@@ -258,41 +258,42 @@ export const Projects = () => {
         </div>
       </section>
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent
-          className="max-w-2xl w-full bg-white border border-green-500 dark:bg-[#151d29] px-0 py-0"
-          style={{
-            maxHeight: "90vh",
-            display: "flex",
-            flexDirection: "column",
-            overflow: "hidden",
-          }}
-        >
-          {selectedProject && (
-            <>
-              <DialogHeader className="sticky top-0 z-10 bg-white dark:bg-[#151d29] px-6 pt-6 pb-2 border-b border-green-500">
-                <DialogTitle className="text-green-700 dark:text-green-300 text-2xl font-bold text-center">
-                  {selectedProject.title}
-                </DialogTitle>
-              </DialogHeader>
-              <div
-                className="overflow-y-auto px-6 pb-6 pt-2"
-                style={{ maxHeight: "calc(90vh - 70px)" }}
-              >
-                <img
-                  src={selectedProject.img}
-                  alt={selectedProject.title}
-                  className="w-full h-56 object-cover rounded-xl mb-6 shadow-lg"
-                  onError={e => { e.currentTarget.src = "https://ui-avatars.com/api/?name=Projeto&background=green&color=white"; }}
-                />
-                <div className="text-gray-800 dark:text-green-100 text-lg text-left">
-                  {selectedProject.description}
-                </div>
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
+      <Dialog open={open && !!selectedProject} onOpenChange={(v) => {
+  setOpen(v);
+  if (!v) setSelectedProject(null);
+}}>
+  {selectedProject && (
+    <DialogContent
+      className="max-w-2xl w-full bg-white border border-green-500 dark:bg-[#151d29] px-0 py-0"
+      style={{
+        maxHeight: "90vh",
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+      }}
+    >
+      <DialogHeader className="sticky top-0 z-10 bg-white dark:bg-[#151d29] px-6 pt-6 pb-2 border-b border-green-500">
+        <DialogTitle className="text-green-700 dark:text-green-300 text-2xl font-bold text-center">
+          {selectedProject.title}
+        </DialogTitle>
+      </DialogHeader>
+      <div
+        className="overflow-y-auto px-6 pb-6 pt-2"
+        style={{ maxHeight: "calc(90vh - 70px)" }}
+      >
+        <img
+          src={selectedProject.img}
+          alt={selectedProject.title}
+          className="w-full h-56 object-cover rounded-xl mb-6 shadow-lg"
+          onError={e => { e.currentTarget.src = "https://ui-avatars.com/api/?name=Projeto&background=green&color=white"; }}
+        />
+        <div className="text-gray-800 dark:text-green-100 text-lg text-left">
+          {selectedProject.description}
+        </div>
+      </div>
+    </DialogContent>
+  )}
+</Dialog>
     </main>
   );
 };
