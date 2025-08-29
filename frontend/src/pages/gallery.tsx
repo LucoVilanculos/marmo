@@ -22,10 +22,8 @@ const imagesByProvince = {
   ],
 
   'Descontaminação nos mangais, Educação ambiental e saúde sexual reprodutiva': [
-    "https://res.cloudinary.com/dtopurogz/image/upload/v1756218827/IMG-20211204-WA01370_udbnid.tiff",
     "https://res.cloudinary.com/dtopurogz/image/upload/v1756218820/IMG-20211204-WA0181_xnfnwx.jpg",
     "https://res.cloudinary.com/dtopurogz/image/upload/v1756218818/IMG-20211204-WA0183_le7qeq.jpg",
-    "https://res.cloudinary.com/dtopurogz/image/upload/v1756218817/IMG-20211210-WA02430_tc0jho.tiff",
     "https://res.cloudinary.com/dtopurogz/image/upload/v1756218816/IMG-20211204-WA0140_qomm31.jpg",
     "https://res.cloudinary.com/dtopurogz/image/upload/v1756218816/IMG-20211204-WA0116_f1povy.jpg",
     "https://res.cloudinary.com/dtopurogz/image/upload/v1756218815/IMG-20211204-WA0141_ghqbub.jpg",
